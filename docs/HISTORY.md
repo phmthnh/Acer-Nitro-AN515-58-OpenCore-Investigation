@@ -20,3 +20,7 @@ Commit đầu tiên lưu trạng thái hiện có; các thay đổi sau mới c�
 - GDB dừng tại breakpoint entry chưa chứng minh lệnh ở entry đã chạy.
 - Ô trắng E008 xuất hiện trước phục hồi CR0/EFER/thanh ghi và nhảy về pstart.
 - WhateverXe nhận diện 46A6 nhưng chưa có backend tự động riêng; chưa phải giải pháp cho lỗi này.
+
+## Kiểm tra sau entry bổ sung
+
+Đã chạy GDB mới với guard byte 89c7, kiểm tra RIP=entry+2 và EDI=EAX trước bước. Passed trong VM rồi theo dõi thêm 300 bước. Panic VM vẫn processor 0 already booted. Chưa có bản probe mới triển khai máy thật; xem evidence/post-entry-proof.json. Lần đầu guard từ chối opcode mong đợi sai 89d8, đã sửa theo dump thực tế.

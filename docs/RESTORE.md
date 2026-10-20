@@ -13,3 +13,7 @@ Manifest: `boot-audit-20261020/manifest.json`.
 
 `configs/current-redacted.plist` đã xóa định danh, không phải bản khôi phục.
 Git bundle lưu được nội dung đã commit, không chứa snapshot bị ignore.
+
+Bản ZIP EFI nguyên trạng riêng tư: `project-backups/Acer-AN51558-EFI-private-20261020.zip`,
+SHA256 trong `project-backups/EFI-private-sha256.txt`. ZIP chứa định danh của máy, không đưa vào GitHub công khai.
+Bản ZIP này không chứa Recovery DMG; Recovery nằm trong snapshot đầy đủ.

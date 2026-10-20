@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "scope": "QEMU TCG diagnostic OpenCore1.0.8 only",
+  "entry_bytes": "89c7",
+  "instruction": "mov edi,eax",
+  "checks": [
+    "RIP equals entry+2 after stepi",
+    "EDI equals pre-step EAX"
+  ],
+  "subsequent_steps": 300,
+  "panic": "panic(cpu 0 caller 0xffffff800f9ff67a): processor 0 already booted @processor.c:1141",
+  "recovery_gui": false,
+  "physical_fix": false,
+  "guest_modified": [
+    "CR0.NE cleared",
+    "CR4.FSGSBASE cleared",
+    "probe mode control"
+  ],
+  "trace_sha256": "51bb9bbdba155f54357591acfdfe56ba9062334859e0896a43102f42445856e5",
+  "initial_attempt": "Guard rejected incorrect expected opcode 89d8; corrected against actual dump to 89c7 before successful rerun"
+}

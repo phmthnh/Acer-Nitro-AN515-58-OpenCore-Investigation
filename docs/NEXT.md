@@ -11,3 +11,5 @@
    nhánh khôi phục và khả năng quan sát framebuffer trên 4GB.
 
 Không triển khai E008 cũ như một bản sửa. Chưa có kết luận lỗi máy thật.
+
+Script trong diagnostics là bản lưu nguồn; để chạy cần đặt ở gốc workspace gốc với qemu-gdb-lab.py, package VM và cache công cụ tương ứng. Repo hiện chưa phải bộ lab tái dựng độc lập.
