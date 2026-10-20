@@ -41,4 +41,4 @@ Git bundle trên cùng ổ chưa bảo vệ khỏi hỏng ổ.
 - https://dortania.github.io/OpenCore-Install-Guide/
 
 Mã và sản phẩm bên thứ ba giữ nguyên giấy phép của tác giả. Repo này không
-cấp lại giấy phép cho những thành phần đó. Chưa phát hành lên GitHub.
+cấp lại giấy phép cho những thành phần đó. Repo riêng tư: https://github.com/phmthnh/Acer-Nitro-AN515-58-OpenCore-Investigation
