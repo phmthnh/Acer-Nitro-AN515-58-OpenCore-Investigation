@@ -1,0 +1,12 @@
+{
+  "entry-probe-v8.nasm": "f2f17ff2b8b08f22f9d5a3c81af210aa633a94deb462fcbd8d0b42e03c7a467f",
+  "oc-stage-trace-v5/GateTrace.nasm": "76ea6dd01e0c4026f63ef5b6adfab069f8b0ee01520f88cc2520cee5537e07e2",
+  "oc-stage-trace-v6/GateTrace.nasm": "0df6eb5557eef0afa0f7d390e7e782dcbf93cb54be3cf9b57caf90f5cbc9423f",
+  "oc-stage-trace-v7/GateTrace.nasm": "705e471346c6821570f496997960d222960e127d14e636a5995194b6a5ba2cba",
+  "oc-stage-trace-v8/GateTrace.nasm": "e3198c52dc842f4cc16d5439ec55e479c05ff7f1a5b7353446b9cd821e7cfe52",
+  "oc-stage-trace-v8/StageTrace.c": "3ded42deaabf0a559606cc2032ea58d1b77a7d5c2f0a4368fb54f0f6d0445131",
+  "verify-stage-v8-vm.py": "8e44042e458a4a252a90985ac55ea97322a5894c9507e031c41989e197996d1a",
+  "test-stage-v8-vm.py": "0fdf3abb79ec96ef2c411306c262fb042a3a02a2f0904701abcdde7678212eda",
+  "make-lab-breakpoint.py": "c538e266fc2f7426c9075106328dbe20b5dd9dbf4a7a890ed62b80248c1a6712",
+  "audit-kernel-progress-20261020.py": "8808e83fb7d1041899fce77375104ffbdec512774f5c553444f0d455fae2e2f9"
+}

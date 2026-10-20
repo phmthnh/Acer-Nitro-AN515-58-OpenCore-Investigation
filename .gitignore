@@ -1,0 +1,11 @@
+# Allowlist: original hardware captures, EFI binaries and Recovery stay local.
+/*
+!/.gitignore
+!/README.md
+!/docs/
+!/evidence/
+!/configs/
+!/tools/
+!/diagnostics/
+__pycache__/
+*.pyc

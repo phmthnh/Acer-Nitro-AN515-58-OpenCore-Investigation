@@ -1,0 +1,27 @@
+{
+  "fresh_vm_run": true,
+  "steps_after_entry": 300,
+  "first_steps": [
+    "KSTEP 0 RIP=0x7300002 CS=0x8 CR0=0x10013 CR3=0x7fc01000 CR4=0x40668 EFER=0x800",
+    "KSTEP 1 RIP=0x7300007 CS=0x8 CR0=0x10013 CR3=0x7fc01000 CR4=0x40668 EFER=0x800",
+    "KSTEP 2 RIP=0x730000c CS=0x8 CR0=0x10013 CR3=0x7fc01000 CR4=0x40668 EFER=0x800"
+  ],
+  "last_steps": [
+    "KSTEP 297 RIP=0x7721512 CS=0x8 CR0=0x80010013 CR3=0x7305000 CR4=0x20 EFER=0xd00",
+    "KSTEP 298 RIP=0x7721514 CS=0x8 CR0=0x80010013 CR3=0x7305000 CR4=0x20 EFER=0xd00",
+    "KSTEP 299 RIP=0x7721517 CS=0x8 CR0=0x80010013 CR3=0x7305000 CR4=0x20 EFER=0xd00"
+  ],
+  "usb_files_verified_unchanged": 160,
+  "physical_boot_success": false,
+  "guest_state_modified": [
+    "CR0.NE cleared",
+    "CR4.FSGSBASE cleared",
+    "probe mode=control"
+  ],
+  "scope": "Diagnostic OpenCore1.0.8 VM-only package; not current USB1.0.9",
+  "kernel_progress_in_vm": true,
+  "vm_panic": "processor 0 already booted @processor.c:1141",
+  "vm_recovery_gui_reached": false,
+  "vm_process_stopped": true,
+  "physical_cause_identified": false
+}
