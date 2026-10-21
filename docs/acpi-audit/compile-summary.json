@@ -1,0 +1,177 @@
+[
+  {
+    "file": "dsdt.dsl",
+    "exit": 0,
+    "errors": 0,
+    "warnings": 187,
+    "remarks": 1091
+  },
+  {
+    "file": "ssdt.dsl",
+    "exit": 0,
+    "errors": 0,
+    "warnings": 1,
+    "remarks": 24
+  },
+  {
+    "file": "ssdt1.dsl",
+    "exit": 0,
+    "errors": 0,
+    "warnings": 0,
+    "remarks": 1
+  },
+  {
+    "file": "ssdt10.dsl",
+    "exit": 0,
+    "errors": 0,
+    "warnings": 0,
+    "remarks": 0
+  },
+  {
+    "file": "ssdt11.dsl",
+    "exit": 0,
+    "errors": 0,
+    "warnings": 0,
+    "remarks": 2
+  },
+  {
+    "file": "ssdt13.dsl",
+    "exit": 0,
+    "errors": 0,
+    "warnings": 0,
+    "remarks": 4
+  },
+  {
+    "file": "ssdt14.dsl",
+    "exit": 0,
+    "errors": 0,
+    "warnings": 0,
+    "remarks": 14
+  },
+  {
+    "file": "ssdt15.dsl",
+    "exit": 0,
+    "errors": 0,
+    "warnings": 6,
+    "remarks": 10
+  },
+  {
+    "file": "ssdt16.dsl",
+    "exit": 0,
+    "errors": 0,
+    "warnings": 3,
+    "remarks": 22
+  },
+  {
+    "file": "ssdt17.dsl",
+    "exit": 0,
+    "errors": 0,
+    "warnings": 0,
+    "remarks": 0
+  },
+  {
+    "file": "ssdt18.dsl",
+    "exit": 0,
+    "errors": 0,
+    "warnings": 12,
+    "remarks": 49
+  },
+  {
+    "file": "ssdt19.dsl",
+    "exit": 0,
+    "errors": 0,
+    "warnings": 0,
+    "remarks": 2
+  },
+  {
+    "file": "ssdt2.dsl",
+    "exit": 0,
+    "errors": 0,
+    "warnings": 0,
+    "remarks": 0
+  },
+  {
+    "file": "ssdt20.dsl",
+    "exit": 0,
+    "errors": 0,
+    "warnings": 0,
+    "remarks": 0
+  },
+  {
+    "file": "ssdt21.dsl",
+    "exit": 0,
+    "errors": 0,
+    "warnings": 0,
+    "remarks": 1
+  },
+  {
+    "file": "ssdt22.dsl",
+    "exit": 0,
+    "errors": 0,
+    "warnings": 0,
+    "remarks": 5
+  },
+  {
+    "file": "ssdt23.dsl",
+    "exit": 0,
+    "errors": 0,
+    "warnings": 0,
+    "remarks": 0
+  },
+  {
+    "file": "ssdt3.dsl",
+    "exit": 0,
+    "errors": 0,
+    "warnings": 0,
+    "remarks": 11
+  },
+  {
+    "file": "ssdt4.dsl",
+    "exit": 0,
+    "errors": 0,
+    "warnings": 4,
+    "remarks": 36
+  },
+  {
+    "file": "ssdt5.dsl",
+    "exit": 0,
+    "errors": 0,
+    "warnings": 0,
+    "remarks": 24
+  },
+  {
+    "file": "ssdt6.dsl",
+    "exit": 0,
+    "errors": 0,
+    "warnings": 20,
+    "remarks": 100
+  },
+  {
+    "file": "ssdt7.dsl",
+    "exit": 0,
+    "errors": 0,
+    "warnings": 2,
+    "remarks": 3
+  },
+  {
+    "file": "ssdt8.dsl",
+    "exit": 0,
+    "errors": 0,
+    "warnings": 0,
+    "remarks": 0
+  },
+  {
+    "file": "ssdt9.dsl",
+    "exit": 0,
+    "errors": 0,
+    "warnings": 1,
+    "remarks": 3
+  },
+  {
+    "file": "ssdt12.dsl",
+    "exit": 0,
+    "errors": 0,
+    "warnings": 0,
+    "remarks": 0
+  }
+]

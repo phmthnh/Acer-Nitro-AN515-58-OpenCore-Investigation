@@ -1,15 +1,15 @@
-# Bước tiếp theo
+# Bước tiếp theo — cập nhật 22/10/2026
 
-Ưu tiên sửa độ tin cậy của công cụ đo trước khi yêu cầu reboot Acer.
+1. Review snapshot G: và manifest. Đây là bộ 1401 hiện có, khác EFI chẩn đoán
+   tối giản mới dựng trong workspace chưa boot thử.
+2. Map USB thật; UTBDefault chưa xác định cổng Kingston/Intel và giới hạn 15 port.
+3. Chọn phép thử có config/hash/log riêng, không xác định nguyên nhân chỉ từ
+   EXITBS:START hoặc warnings của compiler ACPI.
+4. Lưu log OpenCore mới, ảnh/video màn laptop + HDMI, thời gian, BIOS, Recovery.
+   Snapshot ngày 21/10 chưa có log boot mới trên máy thật.
+5. Nếu tiếp tục probe kernel entry, phân biệt ARRIVED/EXECUTED và bảo toàn trạng
+   thái CPU; không triển khai E008 cũ như bản sửa.
+6. Chỉ thử driver GPU sau khi boot được cơ bản, giữ riêng kết quả tăng tốc.
 
-1. Kiểm chứng độc lập byte đầu pstart và kết quả stepi: entry+2, EDI bằng EAX
-   sau `mov edi,eax`, dựa trên byte thực tế; dừng nếu byte khác.
-2. Lưu địa chỉ và trạng thái trước/sau; gọi breakpoint là ARRIVED, không EXECUTED.
-3. Tách lỗi ACPI dành cho Acer khỏi firmware QEMU trong một biến thể chỉ dùng VM.
-   Không mang sửa ACPI của QEMU lên Acer.
-4. Chỉ thiết kế probe máy thật sau khi kiểm chứng bảo toàn trạng thái CPU,
-   nhánh khôi phục và khả năng quan sát framebuffer trên 4GB.
-
-Không triển khai E008 cũ như một bản sửa. Chưa có kết luận lỗi máy thật.
-
-Script trong diagnostics là bản lưu nguồn; để chạy cần đặt ở gốc workspace gốc với qemu-gdb-lab.py, package VM và cache công cụ tương ứng. Repo hiện chưa phải bộ lab tái dựng độc lập.
+Xem HELP-REQUEST.md, ACPI-ANALYSIS-20261021.md, HISTORY.md. Scripts diagnostics/
+vẫn phụ thuộc lab/cache ngoài repo, chưa phải bộ VM/GDB tái dựng độc lập.

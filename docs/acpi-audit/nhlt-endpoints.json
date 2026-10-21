@@ -1,0 +1,41 @@
+[
+  {
+    "length": 6257,
+    "link_type": 2,
+    "instance_id": 0,
+    "vendor_id": 32902,
+    "device_id": 44576,
+    "revision_id": 4332,
+    "subsystem_id": 362549285,
+    "device_type": 0,
+    "direction": 1,
+    "virtual_bus_id": 0,
+    "offset": 37
+  },
+  {
+    "length": 426,
+    "link_type": 3,
+    "instance_id": 0,
+    "vendor_id": 32902,
+    "device_id": 44592,
+    "revision_id": 1,
+    "subsystem_id": 1,
+    "device_type": 0,
+    "direction": 0,
+    "virtual_bus_id": 2,
+    "offset": 6294
+  },
+  {
+    "length": 282,
+    "link_type": 3,
+    "instance_id": 0,
+    "vendor_id": 32902,
+    "device_id": 44592,
+    "revision_id": 1,
+    "subsystem_id": 1,
+    "device_type": 0,
+    "direction": 1,
+    "virtual_bus_id": 2,
+    "offset": 6720
+  }
+]

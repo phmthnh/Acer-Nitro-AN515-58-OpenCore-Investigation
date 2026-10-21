@@ -7,5 +7,9 @@
 !/configs/
 !/tools/
 !/diagnostics/
+!/drive-G/
+# Full-size files are preserved in the release ZIP, not Git history.
+/drive-G/com.apple.recovery.boot/BaseSystem.dmg
+/drive-G/NullMoth/nullmoth-nvidia-2.4.3.tar.gz
 __pycache__/
 *.pyc

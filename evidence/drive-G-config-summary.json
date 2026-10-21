@@ -1,0 +1,592 @@
+{
+  "source": "G:/EFI/OC/config.plist",
+  "acpi": {
+    "Add": [
+      {
+        "Comment": "firmware DSDT with forward Scopes deferred (loads in macOS's ACPICA)",
+        "Enabled": true,
+        "Path": "DSDT.aml"
+      },
+      {
+        "Comment": "SSDT-SBUS.aml",
+        "Enabled": true,
+        "Path": "SSDT-SBUS.aml"
+      },
+      {
+        "Comment": "SSDT-EC.aml",
+        "Enabled": true,
+        "Path": "SSDT-EC.aml"
+      },
+      {
+        "Comment": "SSDT-GPI0.aml",
+        "Enabled": true,
+        "Path": "SSDT-GPI0.aml"
+      },
+      {
+        "Comment": "SSDT-MCHC.aml",
+        "Enabled": true,
+        "Path": "SSDT-MCHC.aml"
+      },
+      {
+        "Comment": "SSDT-PLUG-ALT.aml",
+        "Enabled": true,
+        "Path": "SSDT-PLUG-ALT.aml"
+      },
+      {
+        "Comment": "SSDT-RTCAWAC.aml",
+        "Enabled": true,
+        "Path": "SSDT-RTCAWAC.aml"
+      },
+      {
+        "Comment": "SSDT-USB-Reset.aml",
+        "Enabled": true,
+        "Path": "SSDT-USB-Reset.aml"
+      },
+      {
+        "Comment": "SSDT-USBX.aml",
+        "Enabled": true,
+        "Path": "SSDT-USBX.aml"
+      },
+      {
+        "Comment": "SSDT-XOSI.aml",
+        "Enabled": true,
+        "Path": "SSDT-XOSI.aml"
+      }
+    ],
+    "Delete": [],
+    "Patch": [
+      {
+        "Base": "",
+        "BaseSkip": 0,
+        "Comment": "GPI0 _STA to XSTA Rename",
+        "Count": 0,
+        "Enabled": true,
+        "Find": {
+          "hex": "145F535441"
+        },
+        "Limit": 0,
+        "Mask": {
+          "hex": ""
+        },
+        "OemTableId": {
+          "hex": ""
+        },
+        "Replace": {
+          "hex": "1458535441"
+        },
+        "ReplaceMask": {
+          "hex": ""
+        },
+        "Skip": 0,
+        "TableLength": 0,
+        "TableSignature": {
+          "hex": ""
+        }
+      },
+      {
+        "Base": "",
+        "BaseSkip": 0,
+        "Comment": "_OSI to XOSI rename - requires SSDT-XOSI.aml",
+        "Count": 0,
+        "Enabled": true,
+        "Find": {
+          "hex": "5F4F5349"
+        },
+        "Limit": 0,
+        "Mask": {
+          "hex": ""
+        },
+        "OemTableId": {
+          "hex": ""
+        },
+        "Replace": {
+          "hex": "584F5349"
+        },
+        "ReplaceMask": {
+          "hex": ""
+        },
+        "Skip": 0,
+        "TableLength": 0,
+        "TableSignature": {
+          "hex": ""
+        }
+      }
+    ],
+    "Quirks": {
+      "FadtEnableReset": false,
+      "NormalizeHeaders": false,
+      "RebaseRegions": false,
+      "ResetHwSig": false,
+      "ResetLogoStatus": true,
+      "SyncTableIds": false
+    }
+  },
+  "booter_quirks": {
+    "AllowRelocationBlock": true,
+    "AvoidRuntimeDefrag": true,
+    "ClearTaskSwitchBit": false,
+    "DevirtualiseMmio": false,
+    "DisableSingleUser": false,
+    "DisableVariableWrite": false,
+    "DiscardHibernateMap": false,
+    "EnableSafeModeSlide": true,
+    "EnableWriteUnprotector": false,
+    "FixupAppleEfiImages": true,
+    "ForceBooterSignature": false,
+    "ForceExitBootServices": false,
+    "ProtectMemoryRegions": false,
+    "ProtectSecureBoot": false,
+    "ProtectUefiServices": true,
+    "ProvideCustomSlide": true,
+    "ProvideMaxSlide": 0,
+    "RebuildAppleMemoryMap": true,
+    "ResizeAppleGpuBars": 0,
+    "SetupVirtualMap": true,
+    "SignalAppleOS": false,
+    "SyncRuntimePermissions": true
+  },
+  "kernel_emulate": {
+    "Cpuid1Data": {
+      "hex": "55060A00000000000000000000000000"
+    },
+    "Cpuid1Mask": {
+      "hex": "FFFFFFFF000000000000000000000000"
+    },
+    "DummyPowerManagement": false,
+    "MaxKernel": "",
+    "MinKernel": ""
+  },
+  "kernel_quirks": {
+    "AppleCpuPmCfgLock": false,
+    "AppleXcpmCfgLock": true,
+    "AppleXcpmExtraMsrs": false,
+    "AppleXcpmForceBoost": false,
+    "CustomPciSerialDevice": false,
+    "CustomSMBIOSGuid": true,
+    "DisableIoMapper": true,
+    "DisableIoMapperMapping": false,
+    "DisableLinkeditJettison": true,
+    "DisableRtcChecksum": false,
+    "ExtendBTFeatureFlags": false,
+    "ExternalDiskIcons": false,
+    "ForceAquantiaEthernet": false,
+    "ForceSecureBootScheme": false,
+    "IncreasePciBarSize": false,
+    "LapicKernelPanic": false,
+    "LegacyCommpage": false,
+    "PanicNoKextDump": true,
+    "PowerTimeoutKernelPanic": true,
+    "ProvideCurrentCpuInfo": true,
+    "SetApfsTrimTimeout": -1,
+    "ThirdPartyDrives": false,
+    "XhciPortLimit": false
+  },
+  "kernel_add": [
+    {
+      "Arch": "Any",
+      "BundlePath": "Lilu.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/Lilu",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "AMFIPass.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/AMFIPass",
+      "MaxKernel": "",
+      "MinKernel": "20.0.0",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "AppleALC.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/AppleALC",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "BlueToolFixup.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/BlueToolFixup",
+      "MaxKernel": "",
+      "MinKernel": "21.0.0",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "BrightnessKeys.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/BrightnessKeys",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "CpuTopologyRebuild.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/CpuTopologyRebuild",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "IntelBTPatcher.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/IntelBTPatcher",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "IntelBluetoothFirmware.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/IntelBluetoothFirmware",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "NVMeFix.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/NVMeFix",
+      "MaxKernel": "",
+      "MinKernel": "18.0.0",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "RealtekRTL8111.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/RealtekRTL8111",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "RestrictEvents.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/RestrictEvents",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "VirtualSMC.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/VirtualSMC",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "SMCBatteryManager.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/SMCBatteryManager",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "SMCLightSensor.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/SMCLightSensor",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "SMCProcessor.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/SMCProcessor",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "SMCSuperIO.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/SMCSuperIO",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "USBToolBox.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/USBToolBox",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "UTBDefault.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "VoodooI2C.kext/Contents/PlugIns/VoodooI2CServices.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/VoodooI2CServices",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "VoodooI2C.kext/Contents/PlugIns/VoodooGPIO.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/VoodooGPIO",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "VoodooI2C.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/VoodooI2C",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "VoodooI2C.kext/Contents/PlugIns/VoodooInput.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/VoodooInput",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "VoodooPS2Controller.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/VoodooPS2Controller",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "VoodooPS2Controller.kext/Contents/PlugIns/VoodooInput.kext",
+      "Comment": "",
+      "Enabled": false,
+      "ExecutablePath": "Contents/MacOS/VoodooInput",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/VoodooPS2Keyboard",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Mouse.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/VoodooPS2Mouse",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Trackpad.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/VoodooPS2Trackpad",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "VoodooRMI.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/VoodooRMI",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "VoodooRMI.kext/Contents/PlugIns/RMII2C.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/RMII2C",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "VoodooRMI.kext/Contents/PlugIns/VoodooInput.kext",
+      "Comment": "",
+      "Enabled": false,
+      "ExecutablePath": "Contents/MacOS/VoodooInput",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "WhateverGreen.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/WhateverGreen",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "XHCI-unsupported.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    },
+    {
+      "Arch": "Any",
+      "BundlePath": "itlwm.kext",
+      "Comment": "",
+      "Enabled": true,
+      "ExecutablePath": "Contents/MacOS/itlwm",
+      "MaxKernel": "",
+      "MinKernel": "",
+      "PlistPath": "Contents/Info.plist"
+    }
+  ],
+  "kernel_patch": [
+    {
+      "Arch": "Any",
+      "Base": "_cpu_thread_alloc",
+      "Comment": "force HT enabled for Sequoia or later",
+      "Count": 1,
+      "Enabled": true,
+      "Find": {
+        "hex": "418B8694010000"
+      },
+      "Identifier": "kernel",
+      "Limit": 0,
+      "Mask": {
+        "hex": ""
+      },
+      "MaxKernel": "",
+      "MinKernel": "24.0.0",
+      "Replace": {
+        "hex": "B8FF0000009090"
+      },
+      "ReplaceMask": {
+        "hex": ""
+      },
+      "Skip": 1
+    },
+    {
+      "Arch": "Any",
+      "Base": "_cpu_thread_alloc",
+      "Comment": "force HT enabled for Mojave to Sonoma",
+      "Count": 1,
+      "Enabled": true,
+      "Find": {
+        "hex": "8B8894010000"
+      },
+      "Identifier": "kernel",
+      "Limit": 0,
+      "Mask": {
+        "hex": ""
+      },
+      "MaxKernel": "23.99.99",
+      "MinKernel": "18.0.0",
+      "Replace": {
+        "hex": "B9FF00000090"
+      },
+      "ReplaceMask": {
+        "hex": ""
+      },
+      "Skip": 0
+    },
+    {
+      "Arch": "Any",
+      "Base": "_cpu_thread_alloc",
+      "Comment": "force HT enabled for High Sierra or earlier (untested)",
+      "Count": 1,
+      "Enabled": true,
+      "Find": {
+        "hex": "8B8890010000"
+      },
+      "Identifier": "kernel",
+      "Limit": 0,
+      "Mask": {
+        "hex": ""
+      },
+      "MaxKernel": "17.99.99",
+      "MinKernel": "15.0.0",
+      "Replace": {
+        "hex": "B90000000090"
+      },
+      "ReplaceMask": {
+        "hex": ""
+      },
+      "Skip": 0
+    }
+  ],
+  "boot_args": "-v debug=0x100 keepsyms=1 -vi2c-force-polling ctrsmt=full nvfb=1 nvaccel=1 nvfbheads=4 -nvkmsnosmooth amfi_get_out_of_my_way=0x1 amfi=0x80 ipc_control_port_options=0 gfxrst=4",
+  "system_product_name": "MacBookPro16,2"
+}

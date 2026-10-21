@@ -1,0 +1,1131 @@
+{
+  "madt": [
+    {
+      "offset": 44,
+      "type": 0,
+      "length": 8,
+      "uid": 0,
+      "apic_id": 0,
+      "flags": 1,
+      "enabled": true
+    },
+    {
+      "offset": 52,
+      "type": 0,
+      "length": 8,
+      "uid": 1,
+      "apic_id": 1,
+      "flags": 1,
+      "enabled": true
+    },
+    {
+      "offset": 60,
+      "type": 0,
+      "length": 8,
+      "uid": 2,
+      "apic_id": 8,
+      "flags": 1,
+      "enabled": true
+    },
+    {
+      "offset": 68,
+      "type": 0,
+      "length": 8,
+      "uid": 3,
+      "apic_id": 9,
+      "flags": 1,
+      "enabled": true
+    },
+    {
+      "offset": 76,
+      "type": 0,
+      "length": 8,
+      "uid": 4,
+      "apic_id": 16,
+      "flags": 1,
+      "enabled": true
+    },
+    {
+      "offset": 84,
+      "type": 0,
+      "length": 8,
+      "uid": 5,
+      "apic_id": 17,
+      "flags": 1,
+      "enabled": true
+    },
+    {
+      "offset": 92,
+      "type": 0,
+      "length": 8,
+      "uid": 6,
+      "apic_id": 24,
+      "flags": 1,
+      "enabled": true
+    },
+    {
+      "offset": 100,
+      "type": 0,
+      "length": 8,
+      "uid": 7,
+      "apic_id": 25,
+      "flags": 1,
+      "enabled": true
+    },
+    {
+      "offset": 108,
+      "type": 0,
+      "length": 8,
+      "uid": 8,
+      "apic_id": 32,
+      "flags": 1,
+      "enabled": true
+    },
+    {
+      "offset": 116,
+      "type": 0,
+      "length": 8,
+      "uid": 9,
+      "apic_id": 34,
+      "flags": 1,
+      "enabled": true
+    },
+    {
+      "offset": 124,
+      "type": 0,
+      "length": 8,
+      "uid": 10,
+      "apic_id": 36,
+      "flags": 1,
+      "enabled": true
+    },
+    {
+      "offset": 132,
+      "type": 0,
+      "length": 8,
+      "uid": 11,
+      "apic_id": 38,
+      "flags": 1,
+      "enabled": true
+    },
+    {
+      "offset": 140,
+      "type": 0,
+      "length": 8,
+      "uid": 12,
+      "apic_id": 40,
+      "flags": 1,
+      "enabled": true
+    },
+    {
+      "offset": 148,
+      "type": 0,
+      "length": 8,
+      "uid": 13,
+      "apic_id": 42,
+      "flags": 1,
+      "enabled": true
+    },
+    {
+      "offset": 156,
+      "type": 0,
+      "length": 8,
+      "uid": 14,
+      "apic_id": 44,
+      "flags": 1,
+      "enabled": true
+    },
+    {
+      "offset": 164,
+      "type": 0,
+      "length": 8,
+      "uid": 15,
+      "apic_id": 46,
+      "flags": 1,
+      "enabled": true
+    },
+    {
+      "offset": 172,
+      "type": 0,
+      "length": 8,
+      "uid": 16,
+      "apic_id": 255,
+      "flags": 0,
+      "enabled": false
+    },
+    {
+      "offset": 180,
+      "type": 0,
+      "length": 8,
+      "uid": 17,
+      "apic_id": 255,
+      "flags": 0,
+      "enabled": false
+    },
+    {
+      "offset": 188,
+      "type": 0,
+      "length": 8,
+      "uid": 18,
+      "apic_id": 255,
+      "flags": 0,
+      "enabled": false
+    },
+    {
+      "offset": 196,
+      "type": 0,
+      "length": 8,
+      "uid": 19,
+      "apic_id": 255,
+      "flags": 0,
+      "enabled": false
+    },
+    {
+      "offset": 204,
+      "type": 0,
+      "length": 8,
+      "uid": 20,
+      "apic_id": 255,
+      "flags": 0,
+      "enabled": false
+    },
+    {
+      "offset": 212,
+      "type": 0,
+      "length": 8,
+      "uid": 21,
+      "apic_id": 255,
+      "flags": 0,
+      "enabled": false
+    },
+    {
+      "offset": 220,
+      "type": 0,
+      "length": 8,
+      "uid": 22,
+      "apic_id": 255,
+      "flags": 0,
+      "enabled": false
+    },
+    {
+      "offset": 228,
+      "type": 0,
+      "length": 8,
+      "uid": 23,
+      "apic_id": 255,
+      "flags": 0,
+      "enabled": false
+    },
+    {
+      "offset": 236,
+      "type": 0,
+      "length": 8,
+      "uid": 24,
+      "apic_id": 255,
+      "flags": 0,
+      "enabled": false
+    },
+    {
+      "offset": 244,
+      "type": 0,
+      "length": 8,
+      "uid": 25,
+      "apic_id": 255,
+      "flags": 0,
+      "enabled": false
+    },
+    {
+      "offset": 252,
+      "type": 0,
+      "length": 8,
+      "uid": 26,
+      "apic_id": 255,
+      "flags": 0,
+      "enabled": false
+    },
+    {
+      "offset": 260,
+      "type": 0,
+      "length": 8,
+      "uid": 27,
+      "apic_id": 255,
+      "flags": 0,
+      "enabled": false
+    },
+    {
+      "offset": 268,
+      "type": 0,
+      "length": 8,
+      "uid": 28,
+      "apic_id": 255,
+      "flags": 0,
+      "enabled": false
+    },
+    {
+      "offset": 276,
+      "type": 0,
+      "length": 8,
+      "uid": 29,
+      "apic_id": 255,
+      "flags": 0,
+      "enabled": false
+    },
+    {
+      "offset": 284,
+      "type": 0,
+      "length": 8,
+      "uid": 30,
+      "apic_id": 255,
+      "flags": 0,
+      "enabled": false
+    },
+    {
+      "offset": 292,
+      "type": 0,
+      "length": 8,
+      "uid": 31,
+      "apic_id": 255,
+      "flags": 0,
+      "enabled": false
+    },
+    {
+      "offset": 300,
+      "type": 1,
+      "length": 12,
+      "ioapic_id": 2,
+      "address": "0xfec00000",
+      "gsi_base": 0
+    },
+    {
+      "offset": 312,
+      "type": 2,
+      "length": 10,
+      "bus": 0,
+      "irq": 0,
+      "gsi": 2,
+      "flags": 0
+    },
+    {
+      "offset": 322,
+      "type": 2,
+      "length": 10,
+      "bus": 0,
+      "irq": 9,
+      "gsi": 9,
+      "flags": 13
+    },
+    {
+      "offset": 332,
+      "type": 4,
+      "length": 6
+    },
+    {
+      "offset": 338,
+      "type": 4,
+      "length": 6
+    },
+    {
+      "offset": 344,
+      "type": 4,
+      "length": 6
+    },
+    {
+      "offset": 350,
+      "type": 4,
+      "length": 6
+    },
+    {
+      "offset": 356,
+      "type": 4,
+      "length": 6
+    },
+    {
+      "offset": 362,
+      "type": 4,
+      "length": 6
+    },
+    {
+      "offset": 368,
+      "type": 4,
+      "length": 6
+    },
+    {
+      "offset": 374,
+      "type": 4,
+      "length": 6
+    },
+    {
+      "offset": 380,
+      "type": 4,
+      "length": 6
+    },
+    {
+      "offset": 386,
+      "type": 4,
+      "length": 6
+    },
+    {
+      "offset": 392,
+      "type": 4,
+      "length": 6
+    },
+    {
+      "offset": 398,
+      "type": 4,
+      "length": 6
+    },
+    {
+      "offset": 404,
+      "type": 4,
+      "length": 6
+    },
+    {
+      "offset": 410,
+      "type": 4,
+      "length": 6
+    },
+    {
+      "offset": 416,
+      "type": 4,
+      "length": 6
+    },
+    {
+      "offset": 422,
+      "type": 4,
+      "length": 6
+    },
+    {
+      "offset": 428,
+      "type": 4,
+      "length": 6
+    },
+    {
+      "offset": 434,
+      "type": 4,
+      "length": 6
+    },
+    {
+      "offset": 440,
+      "type": 4,
+      "length": 6
+    },
+    {
+      "offset": 446,
+      "type": 4,
+      "length": 6
+    },
+    {
+      "offset": 452,
+      "type": 4,
+      "length": 6
+    },
+    {
+      "offset": 458,
+      "type": 4,
+      "length": 6
+    },
+    {
+      "offset": 464,
+      "type": 4,
+      "length": 6
+    },
+    {
+      "offset": 470,
+      "type": 4,
+      "length": 6
+    }
+  ],
+  "dsdt_cpu_declarations": [
+    [
+      "PR00",
+      "Zero"
+    ],
+    [
+      "PR01",
+      "One"
+    ],
+    [
+      "PR02",
+      "0x02"
+    ],
+    [
+      "PR03",
+      "0x03"
+    ],
+    [
+      "PR04",
+      "0x04"
+    ],
+    [
+      "PR05",
+      "0x05"
+    ],
+    [
+      "PR06",
+      "0x06"
+    ],
+    [
+      "PR07",
+      "0x07"
+    ],
+    [
+      "PR08",
+      "0x08"
+    ],
+    [
+      "PR09",
+      "0x09"
+    ],
+    [
+      "PR10",
+      "0x0A"
+    ],
+    [
+      "PR11",
+      "0x0B"
+    ],
+    [
+      "PR12",
+      "0x0C"
+    ],
+    [
+      "PR13",
+      "0x0D"
+    ],
+    [
+      "PR14",
+      "0x0E"
+    ],
+    [
+      "PR15",
+      "0x0F"
+    ],
+    [
+      "PR16",
+      "0x10"
+    ],
+    [
+      "PR17",
+      "0x11"
+    ],
+    [
+      "PR18",
+      "0x12"
+    ],
+    [
+      "PR19",
+      "0x13"
+    ],
+    [
+      "PR20",
+      "0x14"
+    ],
+    [
+      "PR21",
+      "0x15"
+    ],
+    [
+      "PR22",
+      "0x16"
+    ],
+    [
+      "PR23",
+      "0x17"
+    ],
+    [
+      "PR24",
+      "0x18"
+    ],
+    [
+      "PR25",
+      "0x19"
+    ],
+    [
+      "PR26",
+      "0x1A"
+    ],
+    [
+      "PR27",
+      "0x1B"
+    ],
+    [
+      "PR28",
+      "0x1C"
+    ],
+    [
+      "PR29",
+      "0x1D"
+    ],
+    [
+      "PR30",
+      "0x1E"
+    ],
+    [
+      "PR31",
+      "0x1F"
+    ],
+    [
+      "PR32",
+      "0x20"
+    ],
+    [
+      "PR33",
+      "0x21"
+    ],
+    [
+      "PR34",
+      "0x22"
+    ],
+    [
+      "PR35",
+      "0x23"
+    ],
+    [
+      "PR36",
+      "0x24"
+    ],
+    [
+      "PR37",
+      "0x25"
+    ],
+    [
+      "PR38",
+      "0x26"
+    ],
+    [
+      "PR39",
+      "0x27"
+    ],
+    [
+      "PR40",
+      "0x28"
+    ],
+    [
+      "PR41",
+      "0x29"
+    ],
+    [
+      "PR42",
+      "0x2A"
+    ],
+    [
+      "PR43",
+      "0x2B"
+    ],
+    [
+      "PR44",
+      "0x2C"
+    ],
+    [
+      "PR45",
+      "0x2D"
+    ],
+    [
+      "PR46",
+      "0x2E"
+    ],
+    [
+      "PR47",
+      "0x2F"
+    ],
+    [
+      "PR48",
+      "0x30"
+    ],
+    [
+      "PR49",
+      "0x31"
+    ],
+    [
+      "PR50",
+      "0x32"
+    ],
+    [
+      "PR51",
+      "0x33"
+    ],
+    [
+      "PR52",
+      "0x34"
+    ],
+    [
+      "PR53",
+      "0x35"
+    ],
+    [
+      "PR54",
+      "0x36"
+    ],
+    [
+      "PR55",
+      "0x37"
+    ],
+    [
+      "PR56",
+      "0x38"
+    ],
+    [
+      "PR57",
+      "0x39"
+    ],
+    [
+      "PR58",
+      "0x3A"
+    ],
+    [
+      "PR59",
+      "0x3B"
+    ],
+    [
+      "PR60",
+      "0x3C"
+    ],
+    [
+      "PR61",
+      "0x3D"
+    ],
+    [
+      "PR62",
+      "0x3E"
+    ],
+    [
+      "PR63",
+      "0x3F"
+    ]
+  ],
+  "usb_declared_ports": {
+    "XHCI": [
+      {
+        "file": "dsdt.dsl",
+        "line": 8375,
+        "kind": "Device",
+        "path": "\\_SB.PC00.XHCI.RHUB.HS01",
+        "declaration": "Device (HS01)",
+        "inside_method": false,
+        "conditions": [
+          "If (CondRefOf (PU2C))",
+          "If (LLessEqual (One, PU2C))"
+        ],
+        "end_line": 8378
+      },
+      {
+        "file": "dsdt.dsl",
+        "line": 8383,
+        "kind": "Device",
+        "path": "\\_SB.PC00.XHCI.RHUB.HS02",
+        "declaration": "Device (HS02)",
+        "inside_method": false,
+        "conditions": [
+          "If (CondRefOf (PU2C))",
+          "If (LLessEqual (0x02, PU2C))"
+        ],
+        "end_line": 8386
+      },
+      {
+        "file": "dsdt.dsl",
+        "line": 8391,
+        "kind": "Device",
+        "path": "\\_SB.PC00.XHCI.RHUB.HS03",
+        "declaration": "Device (HS03)",
+        "inside_method": false,
+        "conditions": [
+          "If (CondRefOf (PU2C))",
+          "If (LLessEqual (0x03, PU2C))"
+        ],
+        "end_line": 8394
+      },
+      {
+        "file": "dsdt.dsl",
+        "line": 8399,
+        "kind": "Device",
+        "path": "\\_SB.PC00.XHCI.RHUB.HS04",
+        "declaration": "Device (HS04)",
+        "inside_method": false,
+        "conditions": [
+          "If (CondRefOf (PU2C))",
+          "If (LLessEqual (0x04, PU2C))"
+        ],
+        "end_line": 8402
+      },
+      {
+        "file": "dsdt.dsl",
+        "line": 8407,
+        "kind": "Device",
+        "path": "\\_SB.PC00.XHCI.RHUB.HS05",
+        "declaration": "Device (HS05)",
+        "inside_method": false,
+        "conditions": [
+          "If (CondRefOf (PU2C))",
+          "If (LLessEqual (0x05, PU2C))"
+        ],
+        "end_line": 8410
+      },
+      {
+        "file": "dsdt.dsl",
+        "line": 8415,
+        "kind": "Device",
+        "path": "\\_SB.PC00.XHCI.RHUB.HS06",
+        "declaration": "Device (HS06)",
+        "inside_method": false,
+        "conditions": [
+          "If (CondRefOf (PU2C))",
+          "If (LLessEqual (0x06, PU2C))"
+        ],
+        "end_line": 8418
+      },
+      {
+        "file": "dsdt.dsl",
+        "line": 8423,
+        "kind": "Device",
+        "path": "\\_SB.PC00.XHCI.RHUB.HS07",
+        "declaration": "Device (HS07)",
+        "inside_method": false,
+        "conditions": [
+          "If (CondRefOf (PU2C))",
+          "If (LLessEqual (0x07, PU2C))"
+        ],
+        "end_line": 8426
+      },
+      {
+        "file": "dsdt.dsl",
+        "line": 8431,
+        "kind": "Device",
+        "path": "\\_SB.PC00.XHCI.RHUB.HS08",
+        "declaration": "Device (HS08)",
+        "inside_method": false,
+        "conditions": [
+          "If (CondRefOf (PU2C))",
+          "If (LLessEqual (0x08, PU2C))"
+        ],
+        "end_line": 8434
+      },
+      {
+        "file": "dsdt.dsl",
+        "line": 8439,
+        "kind": "Device",
+        "path": "\\_SB.PC00.XHCI.RHUB.HS09",
+        "declaration": "Device (HS09)",
+        "inside_method": false,
+        "conditions": [
+          "If (CondRefOf (PU2C))",
+          "If (LLessEqual (0x09, PU2C))"
+        ],
+        "end_line": 8442
+      },
+      {
+        "file": "dsdt.dsl",
+        "line": 8447,
+        "kind": "Device",
+        "path": "\\_SB.PC00.XHCI.RHUB.HS10",
+        "declaration": "Device (HS10)",
+        "inside_method": false,
+        "conditions": [
+          "If (CondRefOf (PU2C))",
+          "If (LLessEqual (0x0A, PU2C))"
+        ],
+        "end_line": 8450
+      },
+      {
+        "file": "dsdt.dsl",
+        "line": 8455,
+        "kind": "Device",
+        "path": "\\_SB.PC00.XHCI.RHUB.HS11",
+        "declaration": "Device (HS11)",
+        "inside_method": false,
+        "conditions": [
+          "If (CondRefOf (PU2C))",
+          "If (LLessEqual (0x0B, PU2C))"
+        ],
+        "end_line": 8458
+      },
+      {
+        "file": "dsdt.dsl",
+        "line": 8463,
+        "kind": "Device",
+        "path": "\\_SB.PC00.XHCI.RHUB.HS12",
+        "declaration": "Device (HS12)",
+        "inside_method": false,
+        "conditions": [
+          "If (CondRefOf (PU2C))",
+          "If (LLessEqual (0x0C, PU2C))"
+        ],
+        "end_line": 8466
+      },
+      {
+        "file": "dsdt.dsl",
+        "line": 8471,
+        "kind": "Device",
+        "path": "\\_SB.PC00.XHCI.RHUB.HS13",
+        "declaration": "Device (HS13)",
+        "inside_method": false,
+        "conditions": [
+          "If (CondRefOf (PU2C))",
+          "If (LLessEqual (0x0D, PU2C))"
+        ],
+        "end_line": 8474
+      },
+      {
+        "file": "dsdt.dsl",
+        "line": 8479,
+        "kind": "Device",
+        "path": "\\_SB.PC00.XHCI.RHUB.HS14",
+        "declaration": "Device (HS14)",
+        "inside_method": false,
+        "conditions": [
+          "If (CondRefOf (PU2C))",
+          "If (LLessEqual (0x0E, PU2C))"
+        ],
+        "end_line": 8482
+      },
+      {
+        "file": "dsdt.dsl",
+        "line": 8485,
+        "kind": "Device",
+        "path": "\\_SB.PC00.XHCI.RHUB.USR1",
+        "declaration": "Device (USR1)",
+        "inside_method": false,
+        "conditions": [
+          "If (CondRefOf (PU2C))"
+        ],
+        "end_line": 8491
+      },
+      {
+        "file": "dsdt.dsl",
+        "line": 8493,
+        "kind": "Device",
+        "path": "\\_SB.PC00.XHCI.RHUB.USR2",
+        "declaration": "Device (USR2)",
+        "inside_method": false,
+        "conditions": [
+          "If (CondRefOf (PU2C))"
+        ],
+        "end_line": 8499
+      },
+      {
+        "file": "dsdt.dsl",
+        "line": 8509,
+        "kind": "Device",
+        "path": "\\_SB.PC00.XHCI.RHUB.SS01",
+        "declaration": "Device (SS01)",
+        "inside_method": false,
+        "conditions": [
+          "If (CondRefOf (PU3C))",
+          "If (LLessEqual (One, PU3C))"
+        ],
+        "end_line": 8515
+      },
+      {
+        "file": "dsdt.dsl",
+        "line": 8520,
+        "kind": "Device",
+        "path": "\\_SB.PC00.XHCI.RHUB.SS02",
+        "declaration": "Device (SS02)",
+        "inside_method": false,
+        "conditions": [
+          "If (CondRefOf (PU3C))",
+          "If (LLessEqual (0x02, PU3C))"
+        ],
+        "end_line": 8526
+      },
+      {
+        "file": "dsdt.dsl",
+        "line": 8531,
+        "kind": "Device",
+        "path": "\\_SB.PC00.XHCI.RHUB.SS03",
+        "declaration": "Device (SS03)",
+        "inside_method": false,
+        "conditions": [
+          "If (CondRefOf (PU3C))",
+          "If (LLessEqual (0x03, PU3C))"
+        ],
+        "end_line": 8537
+      },
+      {
+        "file": "dsdt.dsl",
+        "line": 8542,
+        "kind": "Device",
+        "path": "\\_SB.PC00.XHCI.RHUB.SS04",
+        "declaration": "Device (SS04)",
+        "inside_method": false,
+        "conditions": [
+          "If (CondRefOf (PU3C))",
+          "If (LLessEqual (0x04, PU3C))"
+        ],
+        "end_line": 8548
+      },
+      {
+        "file": "dsdt.dsl",
+        "line": 8553,
+        "kind": "Device",
+        "path": "\\_SB.PC00.XHCI.RHUB.SS05",
+        "declaration": "Device (SS05)",
+        "inside_method": false,
+        "conditions": [
+          "If (CondRefOf (PU3C))",
+          "If (LLessEqual (0x05, PU3C))"
+        ],
+        "end_line": 8559
+      },
+      {
+        "file": "dsdt.dsl",
+        "line": 8564,
+        "kind": "Device",
+        "path": "\\_SB.PC00.XHCI.RHUB.SS06",
+        "declaration": "Device (SS06)",
+        "inside_method": false,
+        "conditions": [
+          "If (CondRefOf (PU3C))",
+          "If (LLessEqual (0x06, PU3C))"
+        ],
+        "end_line": 8570
+      },
+      {
+        "file": "dsdt.dsl",
+        "line": 8575,
+        "kind": "Device",
+        "path": "\\_SB.PC00.XHCI.RHUB.SS07",
+        "declaration": "Device (SS07)",
+        "inside_method": false,
+        "conditions": [
+          "If (CondRefOf (PU3C))",
+          "If (LLessEqual (0x07, PU3C))"
+        ],
+        "end_line": 8581
+      },
+      {
+        "file": "dsdt.dsl",
+        "line": 8586,
+        "kind": "Device",
+        "path": "\\_SB.PC00.XHCI.RHUB.SS08",
+        "declaration": "Device (SS08)",
+        "inside_method": false,
+        "conditions": [
+          "If (CondRefOf (PU3C))",
+          "If (LLessEqual (0x08, PU3C))"
+        ],
+        "end_line": 8592
+      },
+      {
+        "file": "dsdt.dsl",
+        "line": 8597,
+        "kind": "Device",
+        "path": "\\_SB.PC00.XHCI.RHUB.SS09",
+        "declaration": "Device (SS09)",
+        "inside_method": false,
+        "conditions": [
+          "If (CondRefOf (PU3C))",
+          "If (LLessEqual (0x09, PU3C))"
+        ],
+        "end_line": 8603
+      },
+      {
+        "file": "dsdt.dsl",
+        "line": 8608,
+        "kind": "Device",
+        "path": "\\_SB.PC00.XHCI.RHUB.SS10",
+        "declaration": "Device (SS10)",
+        "inside_method": false,
+        "conditions": [
+          "If (CondRefOf (PU3C))",
+          "If (LLessEqual (0x0A, PU3C))"
+        ],
+        "end_line": 8614
+      }
+    ],
+    "TXHC": [
+      {
+        "file": "ssdt6.dsl",
+        "line": 1044,
+        "kind": "Device",
+        "path": "\\_SB.PC00.TXHC.RHUB.HS01",
+        "declaration": "Device (HS01)",
+        "inside_method": false,
+        "conditions": [],
+        "end_line": 1056
+      },
+      {
+        "file": "ssdt6.dsl",
+        "line": 1058,
+        "kind": "Device",
+        "path": "\\_SB.PC00.TXHC.RHUB.SS01",
+        "declaration": "Device (SS01)",
+        "inside_method": false,
+        "conditions": [],
+        "end_line": 1089
+      },
+      {
+        "file": "ssdt6.dsl",
+        "line": 1091,
+        "kind": "Device",
+        "path": "\\_SB.PC00.TXHC.RHUB.SS02",
+        "declaration": "Device (SS02)",
+        "inside_method": false,
+        "conditions": [],
+        "end_line": 1122
+      },
+      {
+        "file": "ssdt6.dsl",
+        "line": 1124,
+        "kind": "Device",
+        "path": "\\_SB.PC00.TXHC.RHUB.SS03",
+        "declaration": "Device (SS03)",
+        "inside_method": false,
+        "conditions": [],
+        "end_line": 1155
+      },
+      {
+        "file": "ssdt6.dsl",
+        "line": 1157,
+        "kind": "Device",
+        "path": "\\_SB.PC00.TXHC.RHUB.SS04",
+        "declaration": "Device (SS04)",
+        "inside_method": false,
+        "conditions": [],
+        "end_line": 1188
+      }
+    ]
+  },
+  "xsdt_pointers": [
+    "0x43abf000",
+    "0x439be000",
+    "0x43af9000",
+    "0x43af8000",
+    "0x43af7000",
+    "0x43af1000",
+    "0x43aee000",
+    "0x43aea000",
+    "0x43adc000",
+    "0x43adb000",
+    "0x43ada000",
+    "0x43ad8000",
+    "0x43ad7000",
+    "0x43ad6000",
+    "0x43ad5000",
+    "0x43ad4000",
+    "0x43ad3000",
+    "0x43ad2000",
+    "0x43ad1000",
+    "0x43ad0000",
+    "0x43acc000",
+    "0x43afd000",
+    "0x43acb000",
+    "0x43ac9000",
+    "0x43ac0000",
+    "0x43abe000",
+    "0x43abd000",
+    "0x43abc000",
+    "0x43a43000",
+    "0x43a42000",
+    "0x43a41000",
+    "0x43a40000",
+    "0x43a38000",
+    "0x43a37000",
+    "0x43a33000",
+    "0x43a30000",
+    "0x43a2e000",
+    "0x43a2d000",
+    "0x43a2c000",
+    "0x43a2b000",
+    "0x43acf000"
+  ]
+}

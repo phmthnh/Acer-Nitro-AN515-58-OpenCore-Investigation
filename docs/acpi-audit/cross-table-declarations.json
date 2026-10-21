@@ -1,0 +1,44 @@
+{
+  "\\_SB.PC00.ADED": [
+    {
+      "file": "ssdt10.dsl",
+      "line": 27,
+      "kind": "Device",
+      "path": "\\_SB.PC00.ADED",
+      "declaration": "Device (ADED)",
+      "inside_method": false,
+      "conditions": [],
+      "end_line": 30
+    },
+    {
+      "file": "ssdt12.dsl",
+      "line": 27,
+      "kind": "Device",
+      "path": "\\_SB.PC00.ADED",
+      "declaration": "Device (ADED)",
+      "inside_method": false,
+      "conditions": [],
+      "end_line": 30
+    }
+  ],
+  "\\_SB.PC00.ADED._HID": [
+    {
+      "file": "ssdt10.dsl",
+      "line": 29,
+      "kind": "Name",
+      "path": "\\_SB.PC00.ADED._HID",
+      "declaration": "Name (_HID, \"10251517\")",
+      "inside_method": false,
+      "conditions": []
+    },
+    {
+      "file": "ssdt12.dsl",
+      "line": 29,
+      "kind": "Name",
+      "path": "\\_SB.PC00.ADED._HID",
+      "declaration": "Name (_HID, \"10251517\")",
+      "inside_method": false,
+      "conditions": []
+    }
+  ]
+}

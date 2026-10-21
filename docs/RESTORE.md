@@ -1,5 +1,19 @@
 # Khôi phục
 
+## Snapshot chia sẻ ngày 21/10/2026
+
+ZIP `Acer-Nitro-drive-G-20261021-redacted.zip` trong Releases giữ đủ 163 tệp bộ cài
+và hỗ trợ từ G:, đã che định danh/SSID/mật khẩu Wi-Fi. Kiểm tra SHA256 ZIP và
+`published_sha256` trong `evidence/drive-G-20261021-manifest.json` sau giải nén.
+Đây không phải disk image, không giữ layout phân vùng. Không dùng định danh đã
+che để boot trực tiếp.
+
+Bản nguyên trạng mới được giữ cục bộ trong workspace, ngoài Git. Không đưa bản
+nguyên trạng có thông tin máy/Wi-Fi lên repo công khai.
+
+Các đường dẫn backup bên dưới thuộc hồ sơ ngày 20/10; cần kiểm tra còn tồn tại
+trước khi dùng, vì người dùng đã báo xóa bộ cài trước đó.
+
 Backup nguyên trạng: `boot-audit-20261020/snapshot/` trong workspace gốc.
 Manifest: `boot-audit-20261020/manifest.json`.
 

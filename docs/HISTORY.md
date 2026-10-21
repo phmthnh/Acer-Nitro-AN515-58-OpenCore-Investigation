@@ -1,5 +1,20 @@
 # Lịch sử có bằng chứng
 
+## Cập nhật snapshot 21/10/2026
+
+- Đọc Report.json và đủ 43 tệp ACPI gốc; BIOS V2.21 được đối chiếu WMI và bảng UEFI.
+- Kiểm tra tĩnh: 42 header/checksum hợp lệ, một tệp rỗng; 25 AML compile lại
+  không có errors. Chưa có boot runtime mới.
+- Dựng riêng EFI chẩn đoán trong workspace, qua ocvalidate; chưa ghi lên G:.
+- Chụp đủ 163 tệp bộ cài/support trên G: nhãn 1401, thuộc Kingston 120 GB.
+  Hai tệp metadata Windows trong System Volume Information không đưa vào gói.
+- Snapshot vẫn là bộ có DSDT thay thế/1401 2.4.3, không có log boot mới trên ổ.
+- GitHub che 11 trường định danh/SSID/mật khẩu Wi-Fi; ZIP Releases giữ đủ payload
+  đã che, gồm hai tệp lớn không đưa vào Git history. G: gốc không bị sửa.
+
+Các đường dẫn backup ngày 20/10 bên dưới là vị trí lịch sử, cần kiểm tra còn tồn tại.
+Snapshot mới và manifest ngày 21/10 là nguồn đối chiếu bổ sung.
+
 | Mốc | Thay đổi / phép thử | Kết quả và giới hạn |
 |---|---|---|
 | 15/10/2026 | OpenCore tối giản, DSDT gốc, thử SetupVirtualMap | Log có cả VMAP=0 và VMAP=1; chưa vào Recovery |
