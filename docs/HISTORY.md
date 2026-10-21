@@ -1,5 +1,15 @@
 # Lịch sử có bằng chứng
 
+## Patch config 22/10/2026
+
+- Sửa NVRAM/Delete để boot-args mới ghi đè biến cũ nếu có.
+- Theo thứ tự Patch trước Add của OpenCore, DSDT thay thế chưa nhận GPI0/XOSI
+  rename. Tạo DSDT-GPI0-XOSI.aml với đúng các rename đó, cập nhật config tham chiếu.
+- Giữ nguyên chiều dài AML, sửa 33 byte gồm tên/checksum; không triển khai AML
+  recompile. Validator và kiểm tra tĩnh đạt, chưa có kết quả boot Acer sau patch.
+- Profile noCTR tạo riêng để thử CPU, không tự kích hoạt; USB map vẫn chưa có.
+- Snapshot G: 21/10/Release giữ nguyên; bản config mới ở configs/patch-20261022.
+
 ## Cập nhật snapshot 21/10/2026
 
 - Đọc Report.json và đủ 43 tệp ACPI gốc; BIOS V2.21 được đối chiếu WMI và bảng UEFI.

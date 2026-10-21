@@ -5,6 +5,12 @@
 Repo này giúp bạn bè xem cấu hình, các tệp bộ cài và bằng chứng để tìm lỗi.
 Đây **không phải EFI đã cài thành công**, chưa có kết luận nguyên nhân treo.
 
+**Patch mới 22/10:** đã sửa NVRAM boot-args và rename trong DSDT thay thế;
+xem [phân tích/thay đổi](docs/CONFIG-PATCH-20261022.md) và
+[các config mới](configs/patch-20261022). Bản fixed được dùng trên G:, profile
+noCTR chỉ là tùy chọn thử. Chưa boot xác nhận sau patch. Snapshot 21/10 bên dưới
+được giữ nguyên làm mốc so sánh trước patch.
+
 **English:** Support/evidence repository for an Acer Nitro AN515-58 (i5-12500H,
 Iris Xe 46A6, RTX 3060 Laptop 2560). Physical hardware has not been confirmed to
 reach Recovery. The G: snapshot is the existing 1401 setup, not the new minimal

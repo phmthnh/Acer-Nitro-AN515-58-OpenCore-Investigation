@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-22",
+  "source": "G:/EFI/OC/config.plist",
+  "source_config_sha256": "cef27ec1729d988bcd097338ce8374dba1b14e1150816cc373273b4f4c675886",
+  "source_dsdt_sha256": "74c21888e0bd5167b9d85cd3bb05870f1a2f29690c3cd4072a9ec3631e53a464",
+  "patched_dsdt_sha256": "6eceb203c9525b3a6f6bfc233ee704bcadd755b82783870718b17b3c36fab2a2",
+  "patched_dsdt_size": 478789,
+  "renames": [
+    {
+      "purpose": "GPI0._STA -> XSTA",
+      "find": "145f535441",
+      "replace": "1458535441",
+      "matches": 1
+    },
+    {
+      "purpose": "_OSI -> XOSI",
+      "find": "5f4f5349",
+      "replace": "584f5349",
+      "matches": 31
+    }
+  ],
+  "fixed_changes": [
+    "NVRAM/Delete: add boot-args",
+    "ACPI/Add: reference DSDT-GPI0-XOSI.aml with renames already applied"
+  ],
+  "optional_cpu_diagnostic_changes": [
+    "CpuTopologyRebuild disabled",
+    "force-HT patches disabled",
+    "ctrsmt argument removed"
+  ],
+  "validation": "ocvalidate 1.0.8 schema; injected file existence and ACPI checksums; patched AML disassembly. No physical boot validation. G: binary has placeholder DBG-XXX-YYYY-MM-DD version marker, so exact build/version equivalence is unverified.",
+  "public_files": {
+    "config-diag-noCTR.plist": "2466ac84ba88ba8499b5e995674aab51bde9cd174a3e12b84c6a33e7239be5cb",
+    "config-fixed.plist": "079684bf6c12df8a695f64f0c6f36128c021cbd220f5a17a6ffdc0c63940ff8b",
+    "DSDT-GPI0-XOSI.aml": "6eceb203c9525b3a6f6bfc233ee704bcadd755b82783870718b17b3c36fab2a2"
+  }
+}
