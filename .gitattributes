@@ -1,0 +1,2 @@
+# Installer/support files must preserve their published SHA256 and signatures.
+drive-G/** -text

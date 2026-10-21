@@ -1,6 +1,7 @@
 # Allowlist: original hardware captures, EFI binaries and Recovery stay local.
 /*
 !/.gitignore
+!/.gitattributes
 !/README.md
 !/docs/
 !/evidence/
