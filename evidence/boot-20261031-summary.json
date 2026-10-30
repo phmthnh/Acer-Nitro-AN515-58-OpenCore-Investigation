@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-31",
+  "timestamp_note": "Log filenames and booter timestamps are firmware-recorded values; no timezone conversion asserted.",
+  "runs": [
+    {
+      "original_filename": "opencore-2026-10-31-021248.txt",
+      "original_sha256": "478ff8b5c0eefa60a8f900e5e4655531bb14a0820ead9f1512f409caea601ff8",
+      "original_bytes": 262144,
+      "selection": "older 1401 Recovery",
+      "kernel": "24.6.0",
+      "cpuid_patch_applied": false,
+      "last_marker": "EXITBS:START",
+      "recovery_ui_reached": false,
+      "raw_log_published": false
+    },
+    {
+      "original_filename": "opencore-2026-10-31-023130.txt",
+      "original_sha256": "64ea9a28fa660c4c553a7334657c49b6d15a9881bd5423a88d5110f81310bbac",
+      "original_bytes": 262144,
+      "selection": "Kingston Tahoe Recovery 25G241",
+      "kernel": "25.6.0",
+      "cpuid_patch_applied": true,
+      "last_marker": "EXITBS:START",
+      "recovery_ui_reached": false,
+      "raw_log_published": false
+    }
+  ],
+  "config_sha256": "cc08bf00650ddc6a777b7effacfb1cdafe80acb7a81aac5061f930621666b18f",
+  "tahoe_image_sha256": "32fadc6bea6f453df0d809b7c5999191fcd42b74c7a6b08c396db1c469eea8fe",
+  "tahoe_build": "25G241",
+  "tahoe_version": "26.7.1",
+  "tahoe_slide": 36,
+  "valid_slides": [
+    0,
+    50
+  ],
+  "cause_identified": false,
+  "direct_firmware_launch_tested": false,
+  "xegfx_probe_run": false,
+  "sysreport_published": false
+}

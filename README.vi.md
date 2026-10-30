@@ -4,9 +4,11 @@
 
 Repo lưu bằng chứng phần cứng, lịch sử cấu hình và chẩn đoán boot cho **Acer Nitro AN515-58, i5-12500H, Intel Iris Xe và RTX 3060 Laptop**.
 
-**Trạng thái ngày 30/10/2026:** máy Acer **chưa được xác nhận vào Recovery hoặc desktop macOS**. Các lượt Sequoia trước dừng ở `EXITBS:START`. Đã chuẩn bị riêng lượt thử Recovery Tahoe **26.7.1 / 25G241**, nhưng chưa có kết quả boot máy thật. Chưa chứng minh tăng tốc Intel hay NVIDIA trên máy này.
+**Trạng thái ngày 31/10/2026:** đã thử đúng Recovery Tahoe **26.7.1 / 25G241** trên Acer bằng OpenCore **1.0.8 DEBUG** qua GRUB. Log xác nhận Darwin **25.6.0**, CPUID patch thành công và 7 kext được chèn thành công, sau đó vẫn kết thúc ở **`EXITBS:START`**. Chưa vào Recovery/desktop hoặc chứng minh tăng tốc. Xem [đối chiếu hai lượt thử và trích log](docs/BOOT-RESULTS-20261031.md#tiếng-việt).
 
 ## Bắt đầu ở đâu?
+
+Kế hoạch đang thực hiện: [boot bộ nền và thử XeGfx theo từng bước](docs/EXPERIMENT-PLAN-20261030.md#tiếng-việt).
 
 1. [Trạng thái điều tra hiện tại](docs/STATUS-20261030.md) — số đo Linux, các bước làm cục bộ sau snapshot và câu hỏi còn mở; tài liệu này bằng tiếng Anh.
 2. [Tóm tắt phần cứng Linux](evidence/linux-hardware-20261030-summary.json) — topology GPU, bộ nhớ và đường màn hình đã đo.
@@ -39,7 +41,7 @@ BIOS đã mở được **Optimus / Auto Select**. Bản thu Linux xác nhận m
 | Thử `SetupVirtualMap` | Đã thử cả hai giá trị; log cục bộ sau xác nhận `VMAP 0` nhưng chưa tiến triển. Đây chưa phải bản sửa đã chứng minh. |
 | QEMU/GDB | Có quan sát hữu ích trong VM, gồm panic sau can thiệp trạng thái CPU; **không phải panic thu từ Acer**. Xem [bằng chứng VM](evidence/post-entry-proof.json). |
 | Ubuntu live | Chạy trực tiếp trên Acer; đã đọc topology GPU, PCI, EDID và ACPI. Đây là hoạt động của Linux, chưa chứng minh hỗ trợ macOS. |
-| EFI nền Tahoe | Đã chuẩn bị cục bộ OpenCore **1.0.8 DEBUG chính thức**, cấu hình tối giản cho Acer và Recovery đúng build. Qua `ocvalidate` và kiểm tra file; chưa có kết quả boot máy thật. |
+| EFI nền Tahoe | OpenCore **1.0.8 DEBUG chính thức**, cấu hình tối giản; qua validator/kiểm tra file. Đã thử máy thật đúng Recovery, CPUID patch thành công nhưng vẫn dừng EXITBS. Chèn kext thành công chưa chứng minh kext chạy được. [Bằng chứng](docs/BOOT-RESULTS-20261031.md#tiếng-việt). |
 | Thử nghiệm NootedGreen | Bản build lại có parser `ngreen-eu=80` mà binary release Yoga đã rà còn thiếu. Chưa nạp hoặc thử trên Acer. |
 | XeGfx | Developer đề nghị thông tin phần cứng trong [issue #1](https://github.com/phmthnh/Acer-Nitro-AN515-58-OpenCore-Investigation/issues/1). Chưa cài XeGfx hoặc chạy probe. |
 

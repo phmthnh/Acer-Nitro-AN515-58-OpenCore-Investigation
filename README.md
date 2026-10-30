@@ -4,9 +4,11 @@
 
 Hardware evidence, configuration history and boot diagnostics for an **Acer Nitro AN515-58 with an i5-12500H, Intel Iris Xe and RTX 3060 Laptop GPU**.
 
-**Status — 30 October 2026:** macOS Recovery and desktop have **not been confirmed to boot on this Acer**. Earlier Sequoia attempts stopped at `EXITBS:START`. A separate Tahoe `26.7.1 / 25G241` Recovery test is prepared; its physical boot result is pending. Neither Intel nor NVIDIA acceleration has been demonstrated on this machine.
+**Status — 31 October 2026:** the correct Tahoe `26.7.1 / 25G241` Recovery was tested on the Acer using OpenCore **1.0.8 DEBUG** through GRUB. The log confirms Darwin **25.6.0**, successful CPUID patching and seven successful kext injections, then ends at **`EXITBS:START`**. Recovery/desktop and graphics acceleration remain unconfirmed. See the [two-run comparison and log excerpts](docs/BOOT-RESULTS-20261031.md).
 
 ## Start here
+
+Active plan: [baseline boot and staged XeGfx testing / kế hoạch thử nghiệm](docs/EXPERIMENT-PLAN-20261030.md).
 
 1. [Current investigation status](docs/STATUS-20261030.md) — Linux measurements, later local work and remaining questions.
 2. [Linux hardware summary](evidence/linux-hardware-20261030-summary.json) — measured GPU topology, memory configuration and display route.
@@ -39,7 +41,7 @@ The BIOS exposes **Optimus / Auto Select**. The Linux capture proves that the in
 | `SetupVirtualMap` tests | Both values have been tried; a later local log confirmed `VMAP 0` without progress. This is not a proven fix. |
 | QEMU/GDB experiments | Useful VM observations, including a processor panic after CPU-state intervention; **not a panic captured from the Acer**. See [VM evidence](evidence/post-entry-proof.json). |
 | Ubuntu live capture | Runs directly on the Acer. GPU topology, PCI configuration, EDID and firmware tables were collected; this demonstrates Linux behavior, not macOS support. |
-| Tahoe boot baseline | Official OpenCore **1.0.8 DEBUG**, a minimal Acer configuration and exact-build Recovery were prepared locally. `ocvalidate` and file-integrity checks passed; physical boot remains unverified. |
+| Tahoe boot baseline | Official OpenCore **1.0.8 DEBUG**, minimal Acer configuration; validator/integrity checks passed. Physical test selected the correct Recovery and applied CPUID patching, but still stopped at EXITBS. Successful injection does not prove kext execution. [Evidence](docs/BOOT-RESULTS-20261031.md). |
 | NootedGreen experiment | A local rebuild contains the `ngreen-eu=80` parser missing from the reviewed Yoga release binary. It has not been loaded or tested on the Acer. |
 | XeGfx | A developer requested hardware information in [issue #1](https://github.com/phmthnh/Acer-Nitro-AN515-58-OpenCore-Investigation/issues/1). No XeGfx installation or probe has been performed here. |
 
