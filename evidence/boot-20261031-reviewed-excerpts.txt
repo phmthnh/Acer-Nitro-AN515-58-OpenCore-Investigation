@@ -60,3 +60,40 @@
 29:884 00:001 OC: Prelinked injection VoodooPS2Controller.kext\Contents\PlugIns\VoodooPS2Keyboard.kext v2.3.7
 30:003 00:069 OC: Prelinked status - Success
 30:052 00:002 AAPL: #[EB|LOG:EXITBS:START] 2026-10-31T02:32:00
+
+## opencore-2026-10-31-032717.txt (P1 CPU)
+00:025 00:025 OC: OpenCore DBG-108-2026-09-27 is loading in Optional mode (0/0)...
+00:125 00:001 OCABC: FEXITBS 0 PRMRG 0 CSLIDE 1 MSLIDE 0 PRSRV 1 RBMAP 1 VMAP 0 APPLOS 0 RTPERMS 1 ARBAR -1 RBIO 0
+00:168 00:003 OCABC: Recovering trashed GetMemoryMap pointer
+00:170 00:002 OCABC: Got rendezvous with OpenRuntime r12
+00:172 00:001 OCABC: MAT support is 1
+00:195 00:003 OCABC: Recovering trashed GetMemoryMap pointer
+03:148 00:002 OCB: Should boot from 3. Acer Tahoe 25G241 - KINGSTON (T:4|F:1|G:0|E:1|DEF:0)
+19:849 16:601 OCRAM: SHA-256 Digest is: 32FADC6BEA6F453DF0D809B7C5999191FCD42B74C7A6B08C396DB1C469EEA8FE
+26:878 00:011 OCABC: Recovering trashed GetMemoryMap pointer
+26:969 00:002 OCABC: Recovering trashed GetMemoryMap pointer
+26:976 00:002 OCABC: Only 51/256 slide values are usable!
+26:978 00:001 OCABC: Valid slides - 0-50
+27:120 00:001 AAPL: #[EB|MBA:OUT] <"-v debug=0x100 keepsyms=1 slide=31 ">
+27:242 00:006 OCAK: Read kernel version 25.6.0 (250600)
+27:275 00:002 OCAK: [OK] Patch success CPUID release
+27:399 00:002 OC: Prelinked injection Lilu.kext (Upstream unmodified) - Success
+27:402 00:002 OC: Prelinked injection Lilu.kext v1.7.2
+27:412 00:003 OC: Prelinked injection CpuTscSync.kext (Yoga CPU transfer candidate; Acer runtime not verified) - Success
+27:414 00:002 OC: Prelinked injection CpuTscSync.kext v1.1.2
+27:425 00:002 OC: Prelinked injection CpuTopologyRebuild.kext (Yoga CPU transfer candidate; Acer runtime not verified) - Success
+27:427 00:002 OC: Prelinked injection CpuTopologyRebuild.kext v2.0.2
+27:437 00:003 OC: Prelinked injection VirtualSMC.kext (Upstream unmodified) - Success
+27:439 00:002 OC: Prelinked injection VirtualSMC.kext v1.3.8
+27:459 00:002 OC: Prelinked injection RealtekRTL8111.kext (Upstream unmodified) - Success
+27:461 00:002 OC: Prelinked injection RealtekRTL8111.kext v3.0.4
+27:471 00:002 OC: Prelinked injection USBToolBox.kext (Upstream unmodified) - Success
+27:473 00:002 OC: Prelinked injection USBToolBox.kext v1.2.0
+27:475 00:002 OC: Prelinked injection UTBDefault.kext (Upstream unmodified) - Success
+27:477 00:002 OC: Prelinked injection UTBDefault.kext v1.0
+27:488 00:004 OC: Prelinked injection VoodooPS2Controller.kext (Upstream unmodified) - Success
+27:490 00:002 OC: Prelinked injection VoodooPS2Controller.kext v2.3.7
+27:534 00:003 OC: Prelinked injection VoodooPS2Controller.kext\Contents\PlugIns\VoodooPS2Keyboard.kext (Upstream unmodified) - Success
+27:536 00:001 OC: Prelinked injection VoodooPS2Controller.kext\Contents\PlugIns\VoodooPS2Keyboard.kext v2.3.7
+27:654 00:068 OC: Prelinked status - Success
+27:716 00:002 AAPL: #[EB|LOG:EXITBS:START] 2026-10-31T03:27:45

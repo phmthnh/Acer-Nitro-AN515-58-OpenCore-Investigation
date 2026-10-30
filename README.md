@@ -4,7 +4,7 @@
 
 Hardware evidence, configuration history and boot diagnostics for an **Acer Nitro AN515-58 with an i5-12500H, Intel Iris Xe and RTX 3060 Laptop GPU**.
 
-**Status — 31 October 2026:** the correct Tahoe `26.7.1 / 25G241` Recovery was tested on the Acer using OpenCore **1.0.8 DEBUG** through GRUB. The log confirms Darwin **25.6.0**, successful CPUID patching and seven successful kext injections, then ends at **`EXITBS:START`**. Recovery/desktop and graphics acceleration remain unconfirmed. See the [two-run comparison and log excerpts](docs/BOOT-RESULTS-20261031.md).
+**Status — 31 October 2026:** both the minimal Tahoe baseline and the Yoga-derived **P1 CPU candidate** end at **`EXITBS:START`** on the Acer. The latest run confirms Darwin **25.6.0**, successful CPUID patching and nine successful kext injections, including CpuTscSync/CpuTopologyRebuild. Their execution is not verified. Recovery/desktop and graphics acceleration remain unconfirmed. See the [three-run comparison](docs/BOOT-RESULTS-20261031.md) and [next work](docs/NEXT-STEPS-20261031.md).
 
 ## Start here
 

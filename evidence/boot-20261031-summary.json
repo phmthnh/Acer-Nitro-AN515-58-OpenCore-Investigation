@@ -23,6 +23,21 @@
       "last_marker": "EXITBS:START",
       "recovery_ui_reached": false,
       "raw_log_published": false
+    },
+    {
+      "original_filename": "opencore-2026-10-31-032717.txt",
+      "original_sha256": "8f38b99c9f4a6eeb9047e2bfcb5047f6a3bdcb50f2425c4887fb413be758ffad",
+      "original_bytes": 262144,
+      "test_id": "ACER-YOGA-P1-CPU-01",
+      "config_sha256": "0382869306c270f5563e7dd0333042280f7eeff87c952cf0f5f6244fe20a01df",
+      "selection": "Kingston Tahoe Recovery 25G241",
+      "kernel": "25.6.0",
+      "cpuid_patch_applied": true,
+      "kext_injection_success_count": 9,
+      "cpu_kext_callbacks_verified": false,
+      "last_marker": "EXITBS:START",
+      "recovery_ui_reached": false,
+      "raw_log_published": false
     }
   ],
   "config_sha256": "cc08bf00650ddc6a777b7effacfb1cdafe80acb7a81aac5061f930621666b18f",

@@ -4,7 +4,7 @@
 
 Repo lưu bằng chứng phần cứng, lịch sử cấu hình và chẩn đoán boot cho **Acer Nitro AN515-58, i5-12500H, Intel Iris Xe và RTX 3060 Laptop**.
 
-**Trạng thái ngày 31/10/2026:** đã thử đúng Recovery Tahoe **26.7.1 / 25G241** trên Acer bằng OpenCore **1.0.8 DEBUG** qua GRUB. Log xác nhận Darwin **25.6.0**, CPUID patch thành công và 7 kext được chèn thành công, sau đó vẫn kết thúc ở **`EXITBS:START`**. Chưa vào Recovery/desktop hoặc chứng minh tăng tốc. Xem [đối chiếu hai lượt thử và trích log](docs/BOOT-RESULTS-20261031.md#tiếng-việt).
+**Trạng thái ngày 31/10/2026:** bộ nền Tahoe và ứng viên **P1 CPU chuyển thể từ Yoga** đều kết thúc tại **`EXITBS:START`**. Lượt mới xác nhận Darwin **25.6.0**, CPUID patch thành công và 9 kext được chèn, gồm CpuTscSync/CpuTopologyRebuild; chưa xác minh callback của chúng chạy được. Chưa vào Recovery/desktop hoặc chứng minh tăng tốc. Xem [đối chiếu ba lượt](docs/BOOT-RESULTS-20261031.md) và [hướng tiếp theo](docs/NEXT-STEPS-20261031.md#tiếng-việt).
 
 ## Bắt đầu ở đâu?
 
