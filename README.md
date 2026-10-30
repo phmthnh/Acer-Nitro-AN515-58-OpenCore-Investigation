@@ -1,133 +1,83 @@
-# Acer Nitro AN515-58 — OpenCore/macOS boot investigation
+# Acer Nitro AN515-58 — OpenCore/macOS investigation
 
-**Snapshot ngày 21/10/2026, tài liệu cập nhật 22/10/2026: máy thật chưa được xác nhận vào giao diện macOS Recovery.**
+**English (primary)** | [Tiếng Việt](README.vi.md)
 
-Repo này giúp bạn bè xem cấu hình, các tệp bộ cài và bằng chứng để tìm lỗi.
-Đây **không phải EFI đã cài thành công**, chưa có kết luận nguyên nhân treo.
+Hardware evidence, configuration history and boot diagnostics for an **Acer Nitro AN515-58 with an i5-12500H, Intel Iris Xe and RTX 3060 Laptop GPU**.
 
-**Patch mới 22/10:** đã sửa NVRAM boot-args và rename trong DSDT thay thế;
-xem [phân tích/thay đổi](docs/CONFIG-PATCH-20261022.md) và
-[các config mới](configs/patch-20261022). Bản fixed được dùng trên G:, profile
-noCTR chỉ là tùy chọn thử. Chưa boot xác nhận sau patch. Snapshot 21/10 bên dưới
-được giữ nguyên làm mốc so sánh trước patch.
+**Status — 30 October 2026:** macOS Recovery and desktop have **not been confirmed to boot on this Acer**. Earlier Sequoia attempts stopped at `EXITBS:START`. A separate Tahoe `26.7.1 / 25G241` Recovery test is prepared; its physical boot result is pending. Neither Intel nor NVIDIA acceleration has been demonstrated on this machine.
 
-**English:** Support/evidence repository for an Acer Nitro AN515-58 (i5-12500H,
-Iris Xe 46A6, RTX 3060 Laptop 2560). Physical hardware has not been confirmed to
-reach Recovery. The G: snapshot is the existing 1401 setup, not the new minimal
-diagnostic EFI. SMBIOS identifiers and Wi-Fi credentials have been redacted.
+## Start here
 
-## Bắt đầu ở đâu?
+1. [Current investigation status](docs/STATUS-20261030.md) — Linux measurements, later local work and remaining questions.
+2. [Linux hardware summary](evidence/linux-hardware-20261030-summary.json) — measured GPU topology, memory configuration and display route.
+3. [Historical 1401 configuration](drive-G/EFI/OC/config.plist), [configuration summary](evidence/drive-G-config-summary.json) and [October 22 patch notes](docs/CONFIG-PATCH-20261022.md).
+4. [Original ACPI analysis](docs/ACPI-ANALYSIS-20261021.md), [history](docs/HISTORY.md), [help request](docs/HELP-REQUEST.md) and [recovery notes](docs/RESTORE.md). These historical technical notes are currently in Vietnamese.
 
-1. [Config đang trên G:](drive-G/EFI/OC/config.plist) và [bản tóm tắt](evidence/drive-G-config-summary.json).
-2. [System-profile 1401](drive-G/NullMoth/system-profile.json) và [phân tích đủ 43 tệp ACPI gốc](docs/ACPI-ANALYSIS-20261021.md).
-3. [Các câu hỏi cần hỗ trợ](docs/HELP-REQUEST.md) và [lịch sử thử nghiệm](docs/HISTORY.md).
-4. [Tải toàn bộ snapshot G: ở Releases](https://github.com/phmthnh/Acer-Nitro-AN515-58-OpenCore-Investigation/releases/tag/drive-g-20261021).
+## Hardware and measured graphics state
 
-## Phần cứng đã xác minh
-
-| Thành phần | Thông tin |
+| Component | Evidence / status |
 |---|---|
-| Máy | Acer Nitro AN515-58, bản người dùng gọi 90U2 |
-| CPU / RAM | Intel Core i5-12500H, Alder Lake-H, 16 GB RAM |
-| BIOS | Insyde **V2.21**, ngày 09/06/2026; khớp Report.json, WMI và chuỗi trong bảng UEFI |
-| iGPU | Intel Iris Xe `8086:46A6`, `\_SB.PC00.GFX0` |
-| dGPU | RTX 3060 Laptop 6 GB, `10DE:2560`, `\_SB.PC00.PEG1.PEGP` |
-| Màn hình trong | BOE0ABF 1920×1080; báo cáo phần cứng ghi nối Intel |
-| HDMI | VA2414-FHD; báo cáo phần cứng ghi nối NVIDIA |
-| LAN / Wi-Fi | Killer E2600 `10EC:2600`; AX1650i `8086:51F0` |
-| Audio / touchpad | Realtek ALC287, Intel SST; Synaptics `SYNA7DB5` I2C |
-| Ổ bộ cài | Kingston SA400S37120G, USB, 120.034.123.776 byte |
-| Ổ đích dự kiến | Intel SS DSCKKF256G8 SATA qua USB, 256.060.514.304 byte (~238,47 GiB) |
+| Laptop / BIOS | Acer Nitro AN515-58; Insyde **V2.21** |
+| CPU / RAM | Intel Core i5-12500H, Alder Lake-H; 12 cores / 16 logical CPUs; 16 GB RAM |
+| Intel iGPU | **`8086:46A6`, revision `0C`**, subsystem `1025:159C`; `00:02.0`, ACPI `\_SB.PC00.GFX0` |
+| GPU topology | Linux i915 reports **80 EU, 5 DSS/subslices, mask `0x1F`**, 16 EU per DSS |
+| Graphics memory | GGC **`0x02C1`** read at PCI offset `0x50`; GMS `0x02` decodes to **64 MiB configured stolen memory**. Usable memory after reservations is not established. |
+| Internal panel | BOE `0ABF`, **1920×1080**; Intel **eDP-1, pipe A, DDI A / PHY A**, active at 165 Hz in the Linux capture; a 60 Hz mode is also listed |
+| NVIDIA GPU | RTX 3060 Laptop 6 GB, **`10DE:2560`**; `01:00.0`, ACPI `\_SB.PC00.PEG1.PEGP`; visible to nouveau in Linux |
+| HDMI | An older hardware report associates the external monitor with NVIDIA. The new capture covers Intel connectors and does not independently establish HDMI routing. |
+| LAN / Wi-Fi | Killer E2600 `10EC:2600`; Killer AX1650i / Intel `8086:51F0` |
+| Audio / touchpad | Reported Realtek ALC287 / Intel SST; Synaptics `SYNA7DB5` I2C; macOS operation unverified |
+| External test disks | Kingston SA400S37120G **120 GB** for boot media; Intel SS DSCKKF256G8 **256 GB** (~238 GiB) intended for macOS |
 
-G: lúc chụp có nhãn `1401`, FAT32, dung lượng ~16 GiB, nằm trên Kingston.
-Số Disk/ký tự ổ có thể đổi; không dùng chúng làm định danh cố định khi ghi ổ.
+The BIOS exposes **Optimus / Auto Select**. The Linux capture proves that the internal panel was driven by Intel while NVIDIA remained present; it does not record the exact saved BIOS menu value. Drive letters and disk numbers are historical labels, not reliable identities for writing disks.
 
-## Trạng thái boot: điều đã biết và giới hạn
+## What has and has not been demonstrated
 
-| Bằng chứng | Điều có thể kết luận | Giới hạn |
-|---|---|---|
-| Hồ sơ boot máy thật trước đây | Log kết thúc `EXITBS:START` | Chưa có panic máy thật xác định nguyên nhân |
-| Đã thử tối giản, cpus=1, SetupVirtualMap 0/1, 1401 2.4.3 | Các hướng này đã được thử theo hồ sơ cũ | Không coi đổi lại cùng tùy chọn là bản sửa đã chứng minh |
-| Ô trắng probe E008 | Trampoline tới đoạn vẽ | Chưa chứng minh kernel gốc chạy thành công |
-| QEMU/GDB: 300 bước, panic processor 0 already booted | Kết quả trong VM đã can thiệp trạng thái CPU | **Không phải panic thu từ Acer** |
-| Snapshot G: ngày 21/10 | Đủ 163 tệp bộ cài/support đọc được | Không có log boot mới trong snapshot |
-| Phân tích ACPI mới | Đã kiểm tra checksum, namespace, compile | Phân tích tĩnh không thay thế boot máy thật |
+| Work | Result and limit |
+|---|---|
+| Sequoia boot investigation | Logs end at `EXITBS:START`; no physical-machine panic has established the cause. Later local attempts still stopped there after the boot-argument and DSDT fixes. |
+| `SetupVirtualMap` tests | Both values have been tried; a later local log confirmed `VMAP 0` without progress. This is not a proven fix. |
+| QEMU/GDB experiments | Useful VM observations, including a processor panic after CPU-state intervention; **not a panic captured from the Acer**. See [VM evidence](evidence/post-entry-proof.json). |
+| Ubuntu live capture | Runs directly on the Acer. GPU topology, PCI configuration, EDID and firmware tables were collected; this demonstrates Linux behavior, not macOS support. |
+| Tahoe boot baseline | Official OpenCore **1.0.8 DEBUG**, a minimal Acer configuration and exact-build Recovery were prepared locally. `ocvalidate` and file-integrity checks passed; physical boot remains unverified. |
+| NootedGreen experiment | A local rebuild contains the `ngreen-eu=80` parser missing from the reviewed Yoga release binary. It has not been loaded or tested on the Acer. |
+| XeGfx | A developer requested hardware information in [issue #1](https://github.com/phmthnh/Acer-Nitro-AN515-58-OpenCore-Investigation/issues/1). No XeGfx installation or probe has been performed here. |
 
-Một số bằng chứng cũ chỉ còn manifest/hash hoặc hồ sơ tổng hợp; repo chưa chứa
-đủ nội dung log nguyên bản. Không coi hash là log có thể đọc.
-[Bằng chứng VM](evidence/post-entry-proof.json), [bước tiếp theo](docs/NEXT.md).
+There is no confirmed accelerated desktop, Metal result, HDMI output, sleep/wake behavior or complete peripheral support. Passing a validator, compiling a kext or seeing a GPU name is not a successful hardware test.
 
-## G: đang chứa cấu hình nào?
+## Historical snapshot versus current local work
 
-`drive-G/` là **bộ 1401/NullMoth 2.4.3 hiện có trên Kingston**:
+**`drive-G/` and the `drive-g-20261021` release preserve the October 21, 2026 snapshot.** They contain the 1401/NullMoth 2.4.3 setup, replacement DSDT and that snapshot's CPU/GPU settings. They do not describe the current Kingston USB or the new Tahoe baseline.
 
-- Nạp DSDT thay thế 478.789 byte; DSDT gốc của báo cáo phần cứng là 478.755 byte.
-  Comment config mô tả xử lý forward scopes; chưa chứng minh sửa được Acer.
-- Có SSDT EC, GPI0, MCHC, PLUG-ALT, RTCAWAC, SBUS, USB-Reset, USBX, XOSI.
-- CpuTopologyRebuild bật, `ctrsmt=full`, patch ép HT, `ProvideCurrentCpuInfo=True`.
-- `SetupVirtualMap=True`, `DevirtualiseMmio=False`, `EnableWriteUnprotector=False`,
-  `RebuildAppleMemoryMap=True`, `SyncRuntimePermissions=True`.
-- Có WhateverGreen; boot args chứa `nvfb`, `nvaccel`, AMFI và `gfxrst=4`.
-- USBToolBox + UTBDefault; **chưa có USB map đã kiểm chứng**.
-- Gói driver/app Mac nằm ở NullMoth; có file cài không chứng minh RTX đã nạp driver/tăng tốc.
+The later local baseline does not include a replacement DSDT, forced-HT kernel patches, CpuTopologyRebuild or an acceleration stack. Its USB preparation retains Ubuntu and adds a GRUB entry that chains to OpenCore. Chainloading changes the pre-boot environment compared with launching OpenCore directly from firmware; that matters when interpreting another EXITBS failure.
 
-Một EFI chẩn đoán tối giản khác đã được dựng riêng trong workspace ngày 21/10,
-qua ocvalidate và kiểm tra Recovery image, nhưng **chưa boot thử trên Acer**.
-Nó chưa được ghi lên G: và không nằm trong snapshot này. Không trộn kết quả
-kiểm tra của bản đó với bộ 1401 đang chia sẻ.
+The new EFI, raw Linux capture, rebuilt kext and Apple installation files remain local. This update publishes a **curated measurement summary and documentation**, not those binaries. Local preparation is not a new tested EFI release.
 
-## Phân tích ACPI đáng chú ý
+The historical ACPI report covers 43 captured files. The later Linux capture contains 48 firmware-table files, including DSDT and 31 SSDTs, with MSDM/SLIC excluded. These are separate captures. Firmware declares 64 CPU devices, while MADT enables 16 APIC entries; the number 64 alone does not establish an ACPI bug.
 
-- 43 tệp gốc: 42 header/checksum/chiều dài hợp lệ; `$h2o.aml` rỗng.
-- 25 AML (DSDT + 24 SSDT) giải mã và compile lại: 0 errors, 236 warnings.
-  Warnings chưa phải bằng chứng lỗi boot; AML compile lại không đưa lên bộ cài.
-- MADT có 16 luồng bật, UID 0/APIC 0 hợp lệ. Mục CPU mẫu và APIC tắt
-  không được coi là CPU đang chạy hoặc nguyên nhân panic QEMU.
-- ssdt10/ssdt12 gốc giống từng byte, cùng tạo ADED. Chưa xác nhận macOS nạp
-  trùng hay bỏ qua và chưa chứng minh quan hệ với EXITBS.
-- XHCI khai báo 26 cổng logic, TXHC thêm 5; cần map cổng thật.
-- RTC/AWAC dùng STAS; EC0 thật phục vụ pin/thermal; NVIDIA có Optimus/power riêng.
-  Không drop hàng loạt SSDT chỉ vì cùng OEM Table ID.
+## Experimental graphics paths
 
-[Báo cáo từng file và giới hạn](docs/ACPI-ANALYSIS-20261021.md).
-[Các bản .dsl](docs/acpi-audit/decoded) chỉ để đọc mã, **không phải SSDT để chép vào EFI**.
-Khóa Windows MSDM không được đưa vào tài liệu công khai.
+- **NootedGreen / Yoga-derived TGL stack:** evaluated separately from NullMoth. The Acer's 80 EU and GGC `0x02C1` differ from the Yoga reference's reported 96 EU and `0xFEC1`. Yoga's two static 60 MiB GMS patches and runtime YogaGMSFix must not be copied unchanged. The local rebuild and payload review are static checks, not acceleration evidence.
+- **XeGfx:** upstream lists Alder Lake / Raptor Lake as untested and asks for hardware reports and generation-specific GuC work. The first request is informational. Its optional stage-2 probe still requires a running macOS installation, installation of a kext into the auxiliary collection and a manual load. It has not been run on this Acer. See [the request and prerequisites](docs/STATUS-20261030.md#xegfx-request).
+- **NullMoth / NVIDIA:** retained in the historical evidence. Driver files and `nvfb`/`nvaccel` arguments do not demonstrate RTX acceleration or a working HDMI path.
 
-## Tải đầy đủ các tệp bộ cài G:
+## Download and verify the historical snapshot
 
-Git lưu tệp nhỏ để xem diff. Hai tệp trên 100 MiB — BaseSystem.dmg và
-nullmoth-nvidia-2.4.3.tar.gz — nằm trong ZIP Releases thay vì Git history.
+- [Release: drive-g-20261021](https://github.com/phmthnh/Acer-Nitro-AN515-58-OpenCore-Investigation/releases/tag/drive-g-20261021).
+- Asset `Acer-Nitro-drive-G-20261021-redacted.zip` contains **163 payload files** plus `SNAPSHOT-MANIFEST.json`.
+- [Per-file manifest](evidence/drive-G-20261021-manifest.json) and [release hash record](evidence/drive-G-release.json); the release also provides `SHA256SUMS.txt`.
+- `BaseSystem.dmg` and `nullmoth-nvidia-2.4.3.tar.gz` are in the release ZIP rather than Git history because they exceed 100 MiB.
 
-- [Release snapshot G:](https://github.com/phmthnh/Acer-Nitro-AN515-58-OpenCore-Investigation/releases/tag/drive-g-20261021)
-- Asset `Acer-Nitro-drive-G-20261021-redacted.zip`: đủ **163 tệp payload**, giữ
-  cấu trúc EFI/, NullMoth/, com.apple.recovery.boot/, thêm SNAPSHOT-MANIFEST.json.
-- [Manifest từng tệp](evidence/drive-G-20261021-manifest.json): size, SHA256 nguồn,
-  SHA256 bản chia sẻ, trường đã che và tệp có trong Git hay chỉ trong ZIP.
-- [SHA256 ZIP](evidence/drive-G-release.json); Releases có SHA256SUMS.txt.
-- Hai tệp metadata Windows trong System Volume Information không được đóng gói.
+The shared snapshot has 11 SMBIOS / SSID / Wi-Fi password fields redacted. Verify shared files using `published_sha256`, not the original source hash or the profile's original EFI hash. The ZIP does not preserve the partition layout and is not a ready-to-boot disk image. Some older evidence exists only as manifests or summaries; a hash is not a readable boot log.
 
-Đã che **11 trường SMBIOS/SSID/mật khẩu Wi-Fi** trong bản chia sẻ; G: gốc không bị sửa.
-ZIP không phải bản byte-for-byte toàn ổ, không giữ layout phân vùng và chưa sẵn sàng
-boot với các định danh đã che. Hash efi_sha256 trong profile 1401 mô tả nguồn
-ban đầu; kiểm tra bản chia sẻ bằng published_sha256 trong manifest.
+## How to help
 
-## Mong bạn bè hỗ trợ
+The immediate goal is to locate the boot failure and reach Recovery, then evaluate graphics in a separate test. Please identify the exact snapshot/configuration, file or method, the reason for a proposed change and the expected log evidence. Keep firmware observations, static analysis, VM results and physical boot results distinct.
 
-Mục tiêu đầu tiên: xác định giai đoạn treo và vào Recovery; sau đó mới thử GPU.
-Nhờ review ACPI/CPU/USB và boot memory handoff, ghi rõ file, thay đổi, lý do,
-log mong đợi. Mỗi lần chỉ thay một nhóm biến và giữ log mới.
+Hardware information can be shared before testing a new driver. Do not include real SMBIOS identifiers, Wi-Fi credentials, Windows keys or Apple account details in a report.
 
-Không cần chia sẻ serial/MLB/UUID thật, Wi-Fi, khóa Windows hay tài khoản Apple.
-Repo chưa xác nhận RTX 3060 Laptop hoặc Iris Xe 46A6 hoạt động.
-[Mẫu mô tả nhờ hỗ trợ](docs/HELP-REQUEST.md).
+## References and attribution
 
-## Nguồn tham khảo
+[OpenCorePkg](https://github.com/acidanthera/OpenCorePkg) · [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) · [1401](https://github.com/nullmoth/1401) · [NullMoth](https://github.com/nullmoth/nvidia-macos-driver) · [WhateverXe](https://github.com/b00t0x/WhateverXe) · [Dell Iris Xe/Tahoe research](https://github.com/JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe) · [Yoga reference](https://github.com/willyyypatootieee/Hackintosh-LenovoYoga-IrisXe-Tahoe) · [XeGfx](https://github.com/watchthelight-labs/XeGfx)
 
-- [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg), [OpCore-Simplify](https://github.com/lzhoang2801/OpCore-Simplify)
-- [1401](https://github.com/nullmoth/1401), [NullMoth NVIDIA driver](https://github.com/nullmoth/nvidia-macos-driver)
-- [WhateverXe](https://github.com/b00t0x/WhateverXe), [graphics payload](https://github.com/b00t0x/WhateverXe-Graphics)
-- [Thử nghiệm Iris Xe trên Dell XPS](https://github.com/JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe)
-- [Dortania OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)
-
-Thành phần bên thứ ba giữ nguyên quyền/giấy phép tác giả. Repo điều tra không cấp
-lại giấy phép cho OpenCore, kexts, bộ cài Apple hoặc bộ NullMoth.
+Third-party components retain their authors' terms. This investigation does not relicense OpenCore, kexts, Apple installation media or NullMoth components, and does not claim authorship of the referenced drivers.

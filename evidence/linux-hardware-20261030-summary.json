@@ -1,0 +1,134 @@
+{
+  "capture_date": "2026-10-30",
+  "publication": "Curated factual summary, not the raw capture or a macOS test result",
+  "source": {
+    "archive_name": "acer-irisxe-20261030-162411-31_78tcd.tar.gz",
+    "sha256": "473086717f0669008e40efd1d9c34f882e5a738b52eafbb25b0d383d007e8b76",
+    "raw_archive_published": false
+  },
+  "machine": {
+    "manufacturer": "Acer",
+    "model": "Nitro AN515-58",
+    "bios_version": "V2.21",
+    "cpu": "Intel Core i5-12500H",
+    "physical_cores": 12,
+    "online_logical_cpus": 16,
+    "bare_metal_linux": true
+  },
+  "igpu": {
+    "pci_address": "0000:00:02.0",
+    "vendor_id": "8086",
+    "device_id": "46A6",
+    "revision": "0C",
+    "subsystem_vendor_id": "1025",
+    "subsystem_device_id": "159C",
+    "driver": "i915",
+    "platform": "ALDERLAKE_P",
+    "available_slices": 1,
+    "available_dss_or_linux_subslices": 5,
+    "dss_mask": "0x1F",
+    "eu_per_dss": 16,
+    "available_eu_total": 80,
+    "l3_bank_count": null
+  },
+  "memory": {
+    "pci_offset": "0x50",
+    "host_bridge_0000_00_00_0_raw_hex": "c1020000",
+    "igpu_0000_00_02_0_raw_hex": "c1020000",
+    "ggc_u16": "0x02C1",
+    "gms_field": "0x02",
+    "decoded_configured_stolen_bytes": 67108864,
+    "usable_stolen_bytes_after_reservations": null,
+    "interpretation_reference": "https://github.com/torvalds/linux/blob/v6.12/arch/x86/kernel/early-quirks.c"
+  },
+  "internal_display": {
+    "intel_connector": "eDP-1",
+    "connected": true,
+    "pipe": "A",
+    "ddi": "A",
+    "phy": "A",
+    "lane_count": 4,
+    "active_width": 1920,
+    "active_height": 1080,
+    "active_refresh_hz": 165,
+    "listed_refresh_hz": [
+      165,
+      60
+    ],
+    "edid_vendor": "BOE",
+    "edid_product_id": "0x0ABF",
+    "edid_blocks_checksum_valid": true
+  },
+  "linux_firmware_observed": {
+    "dmc": {
+      "file": "i915/adlp_dmc.bin",
+      "version": "2.20"
+    },
+    "guc": {
+      "file": "i915/adlp_guc_70.bin",
+      "version": "70.36.0"
+    },
+    "huc": {
+      "file": "i915/tgl_huc.bin",
+      "version": "7.9.3"
+    }
+  },
+  "dgpu": {
+    "vendor_id": "10DE",
+    "device_id": "2560",
+    "driver": "nouveau",
+    "present": true,
+    "connector_capture_included": false
+  },
+  "acpi": {
+    "captured_table_files": 48,
+    "dsdt_bytes": 478755,
+    "ssdt_files_including_dynamic": 31,
+    "msdm_slic_excluded": true,
+    "enabled_madt_cpu_uids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "enabled_madt_apic_ids": [
+      0,
+      1,
+      8,
+      9,
+      16,
+      17,
+      24,
+      25,
+      32,
+      34,
+      36,
+      38,
+      40,
+      42,
+      44,
+      46
+    ],
+    "firmware_pr_cpu_devices": 64
+  },
+  "limits": {
+    "exact_saved_bios_display_mode": null,
+    "macos_recovery_boot_confirmed": false,
+    "macos_desktop_boot_confirmed": false,
+    "macos_gpu_acceleration_confirmed": false,
+    "xegfx_probe_run": false,
+    "hdmi_routing_independently_verified_by_this_capture": false
+  }
+}

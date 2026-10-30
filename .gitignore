@@ -3,6 +3,7 @@
 !/.gitignore
 !/.gitattributes
 !/README.md
+!/README.vi.md
 !/docs/
 !/evidence/
 !/configs/
