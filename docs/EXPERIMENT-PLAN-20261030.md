@@ -1,5 +1,9 @@
 # Experiment plan — Acer AN515-58
 
+> **Current milestone — 3 November 2026:** C1 produces XNU verbose on the internal display, then remains at the photographed ACPI listing according to the owner. Recovery is not reached. Keep C1 unchanged while documenting the later stop. [Method and evidence](C1-RESULT-20261103.md). Earlier dated entries below are historical.
+> **Mốc mới 03/11/2026:** C1 đã xuất verbose XNU nhưng đứng ở phần liệt kê ACPI; chưa vào Recovery. Giữ nguyên C1 để thu bằng chứng điểm dừng mới. [Chi tiết](C1-RESULT-20261103.md#tiếng-việt).
+
+
 [English README](../README.md) · [Tiếng Việt](../README.vi.md)
 
 ## English

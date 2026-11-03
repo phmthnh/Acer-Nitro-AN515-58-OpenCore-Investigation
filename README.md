@@ -4,7 +4,7 @@
 
 Hardware evidence, configuration history and boot diagnostics for an **Acer Nitro AN515-58 with an i5-12500H, Intel Iris Xe and RTX 3060 Laptop GPU**.
 
-**Status — 31 October 2026:** both the minimal Tahoe baseline and the Yoga-derived **P1 CPU candidate** end at **`EXITBS:START`** on the Acer. The latest run confirms Darwin **25.6.0**, successful CPUID patching and nine successful kext injections, including CpuTscSync/CpuTopologyRebuild. Their execution is not verified. Recovery/desktop and graphics acceleration remain unconfirmed. See the [three-run comparison](docs/BOOT-RESULTS-20261031.md) and [next work](docs/NEXT-STEPS-20261031.md).
+**Status — 3 November 2026:** C1 (`ProvideCurrentCpuInfo=False`, the only configuration change from stock-OpenCore C0) now produces **confirmed XNU verbose output on the internal display**. The owner reports that it remains at the photographed ACPI table listing and does not advance. Recovery/desktop and acceleration remain unconfirmed. OpenCore logs still end at `EXITBS:START`, despite the subsequent XNU output. See [C1 method, hardware evidence and limits](docs/C1-RESULT-20261103.md).
 
 ## Start here
 
@@ -51,7 +51,7 @@ There is no confirmed accelerated desktop, Metal result, HDMI output, sleep/wake
 
 **`drive-G/` and the `drive-g-20261021` release preserve the October 21, 2026 snapshot.** They contain the 1401/NullMoth 2.4.3 setup, replacement DSDT and that snapshot's CPU/GPU settings. They do not describe the current Kingston USB or the new Tahoe baseline.
 
-The later local baseline does not include a replacement DSDT, forced-HT kernel patches, CpuTopologyRebuild or an acceleration stack. Its USB preparation retains Ubuntu and adds a GRUB entry that chains to OpenCore. Chainloading changes the pre-boot environment compared with launching OpenCore directly from firmware; that matters when interpreting another EXITBS failure.
+The earlier minimal baseline (before the P1/C0/C1 CPU candidates) did not include a replacement DSDT, forced-HT kernel patches, CpuTopologyRebuild or an acceleration stack. Its USB preparation retains Ubuntu and adds a GRUB entry that chains to OpenCore. Chainloading changes the pre-boot environment compared with launching OpenCore directly from firmware; that matters when interpreting another EXITBS failure.
 
 The new EFI, raw Linux capture, rebuilt kext and Apple installation files remain local. This update publishes a **curated measurement summary and documentation**, not those binaries. Local preparation is not a new tested EFI release.
 

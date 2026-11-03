@@ -1,0 +1,93 @@
+SOURCE: opencore-2026-11-03-023543.txt
+SHA256: 750b593999dae90f00e6ef198c6376ab0febdb130b2a3598fe5c5b03e4f84cee
+Reviewed excerpt; omitted lines are not represented.
+00:000 00:000 OC: Booter path - \EFI\AcerBootControl/OpenCore.efi
+00:031 00:001 OCCPU: MP services Pkg 1 Cores 24 Threads 2 - Success
+00:059 00:001 OCCPU: Pkg 1 Cores 12 Threads 16
+00:431 00:001 OCCPU: MP services Pkg 1 Cores 24 Threads 2 - Success
+00:459 00:001 OCCPU: Pkg 1 Cores 12 Threads 16
+27:186 00:006 OCAK: Read kernel version 25.6.0 (250600)
+27:228 00:002 OCAK: [OK] Patch success CPUID release
+27:255 00:001 OCAK: Patching MSR 35h to 00100010 - Success
+27:361 00:002 OC: Prelinked injection Lilu.kext (Upstream unmodified) - Success
+27:363 00:001 OC: Prelinked injection Lilu.kext v1.7.2
+27:374 00:003 OC: Prelinked injection CpuTscSync.kext (Yoga CPU transfer candidate; Acer runtime not verified) - Success
+27:376 00:002 OC: Prelinked injection CpuTscSync.kext v1.1.2
+27:387 00:002 OC: Prelinked injection CpuTopologyRebuild.kext (Yoga CPU transfer candidate; Acer runtime not verified) - Success
+27:389 00:001 OC: Prelinked injection CpuTopologyRebuild.kext v2.0.2
+27:398 00:003 OC: Prelinked injection VirtualSMC.kext (Upstream unmodified) - Success
+27:400 00:002 OC: Prelinked injection VirtualSMC.kext v1.3.8
+27:420 00:002 OC: Prelinked injection RealtekRTL8111.kext (Upstream unmodified) - Success
+27:422 00:001 OC: Prelinked injection RealtekRTL8111.kext v3.0.4
+27:432 00:002 OC: Prelinked injection USBToolBox.kext (Upstream unmodified) - Success
+27:434 00:001 OC: Prelinked injection USBToolBox.kext v1.2.0
+27:437 00:002 OC: Prelinked injection UTBDefault.kext (Upstream unmodified) - Success
+27:439 00:002 OC: Prelinked injection UTBDefault.kext v1.0
+27:449 00:004 OC: Prelinked injection VoodooPS2Controller.kext (Upstream unmodified) - Success
+27:452 00:002 OC: Prelinked injection VoodooPS2Controller.kext v2.3.7
+27:496 00:003 OC: Prelinked injection VoodooPS2Controller.kext\Contents\PlugIns\VoodooPS2Keyboard.kext (Upstream unmodified) - Success
+27:498 00:002 OC: Prelinked injection VoodooPS2Controller.kext\Contents\PlugIns\VoodooPS2Keyboard.kext v2.3.7
+27:617 00:070 OC: Prelinked status - Success
+27:666 00:002 AAPL: #[EB|LOG:EXITBS:START] 2026-11-03T02:36:11
+
+SOURCE: opencore-2026-11-03-140857.txt
+SHA256: 45ed52390ce56736c59bb6e22365a39e28d691c7cfe4d1ad3a9db2d054a266be
+Reviewed excerpt; omitted lines are not represented.
+00:000 00:000 OC: Booter path - \EFI\AcerBootC1/OpenCore.efi
+00:031 00:002 OCCPU: MP services Pkg 1 Cores 24 Threads 2 - Success
+00:059 00:001 OCCPU: Pkg 1 Cores 12 Threads 16
+00:418 00:002 OCCPU: MP services Pkg 1 Cores 24 Threads 2 - Success
+00:446 00:001 OCCPU: Pkg 1 Cores 12 Threads 16
+28:129 00:006 OCAK: Read kernel version 25.6.0 (250600)
+28:162 00:002 OCAK: [OK] Patch success CPUID release
+28:226 00:003 OC: Prelinked injection Lilu.kext (Upstream unmodified) - Success
+28:228 00:002 OC: Prelinked injection Lilu.kext v1.7.2
+28:239 00:003 OC: Prelinked injection CpuTscSync.kext (Yoga CPU transfer candidate; Acer runtime not verified) - Success
+28:241 00:002 OC: Prelinked injection CpuTscSync.kext v1.1.2
+28:252 00:002 OC: Prelinked injection CpuTopologyRebuild.kext (Yoga CPU transfer candidate; Acer runtime not verified) - Success
+28:254 00:002 OC: Prelinked injection CpuTopologyRebuild.kext v2.0.2
+28:263 00:003 OC: Prelinked injection VirtualSMC.kext (Upstream unmodified) - Success
+28:265 00:002 OC: Prelinked injection VirtualSMC.kext v1.3.8
+28:285 00:002 OC: Prelinked injection RealtekRTL8111.kext (Upstream unmodified) - Success
+28:287 00:002 OC: Prelinked injection RealtekRTL8111.kext v3.0.4
+28:297 00:002 OC: Prelinked injection USBToolBox.kext (Upstream unmodified) - Success
+28:299 00:002 OC: Prelinked injection USBToolBox.kext v1.2.0
+28:301 00:002 OC: Prelinked injection UTBDefault.kext (Upstream unmodified) - Success
+28:303 00:002 OC: Prelinked injection UTBDefault.kext v1.0
+28:314 00:004 OC: Prelinked injection VoodooPS2Controller.kext (Upstream unmodified) - Success
+28:317 00:002 OC: Prelinked injection VoodooPS2Controller.kext v2.3.7
+28:360 00:003 OC: Prelinked injection VoodooPS2Controller.kext\Contents\PlugIns\VoodooPS2Keyboard.kext (Upstream unmodified) - Success
+28:363 00:002 OC: Prelinked injection VoodooPS2Controller.kext\Contents\PlugIns\VoodooPS2Keyboard.kext v2.3.7
+28:491 00:071 OC: Prelinked status - Success
+28:539 00:002 AAPL: #[EB|LOG:EXITBS:START] 2026-11-03T14:09:26
+
+SOURCE: opencore-2026-11-03-141124.txt
+SHA256: 3b0918e9954c8d2e69e803b27719f08a149a71ce3dc3e318d9507803e58ee311
+Reviewed excerpt; omitted lines are not represented.
+00:000 00:000 OC: Booter path - \EFI\AcerBootC1/OpenCore.efi
+00:016 00:001 OCCPU: MP services Pkg 1 Cores 24 Threads 2 - Success
+00:065 00:001 OCCPU: Pkg 1 Cores 12 Threads 16
+00:414 00:001 OCCPU: MP services Pkg 1 Cores 24 Threads 2 - Success
+00:450 00:001 OCCPU: Pkg 1 Cores 12 Threads 16
+26:668 00:006 OCAK: Read kernel version 25.6.0 (250600)
+26:702 00:002 OCAK: [OK] Patch success CPUID release
+26:764 00:002 OC: Prelinked injection Lilu.kext (Upstream unmodified) - Success
+26:767 00:002 OC: Prelinked injection Lilu.kext v1.7.2
+26:777 00:003 OC: Prelinked injection CpuTscSync.kext (Yoga CPU transfer candidate; Acer runtime not verified) - Success
+26:780 00:002 OC: Prelinked injection CpuTscSync.kext v1.1.2
+26:799 00:002 OC: Prelinked injection CpuTopologyRebuild.kext (Yoga CPU transfer candidate; Acer runtime not verified) - Success
+26:801 00:002 OC: Prelinked injection CpuTopologyRebuild.kext v2.0.2
+26:817 00:009 OC: Prelinked injection VirtualSMC.kext (Upstream unmodified) - Success
+26:819 00:002 OC: Prelinked injection VirtualSMC.kext v1.3.8
+26:839 00:002 OC: Prelinked injection RealtekRTL8111.kext (Upstream unmodified) - Success
+26:841 00:002 OC: Prelinked injection RealtekRTL8111.kext v3.0.4
+26:851 00:002 OC: Prelinked injection USBToolBox.kext (Upstream unmodified) - Success
+26:853 00:001 OC: Prelinked injection USBToolBox.kext v1.2.0
+26:856 00:002 OC: Prelinked injection UTBDefault.kext (Upstream unmodified) - Success
+26:858 00:002 OC: Prelinked injection UTBDefault.kext v1.0
+26:868 00:004 OC: Prelinked injection VoodooPS2Controller.kext (Upstream unmodified) - Success
+26:871 00:002 OC: Prelinked injection VoodooPS2Controller.kext v2.3.7
+26:915 00:003 OC: Prelinked injection VoodooPS2Controller.kext\Contents\PlugIns\VoodooPS2Keyboard.kext (Upstream unmodified) - Success
+26:917 00:002 OC: Prelinked injection VoodooPS2Controller.kext\Contents\PlugIns\VoodooPS2Keyboard.kext v2.3.7
+27:038 00:072 OC: Prelinked status - Success
+27:086 00:002 AAPL: #[EB|LOG:EXITBS:START] 2026-11-03T14:11:51

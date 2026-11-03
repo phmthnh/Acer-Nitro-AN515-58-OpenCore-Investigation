@@ -4,7 +4,7 @@
 
 Repo lưu bằng chứng phần cứng, lịch sử cấu hình và chẩn đoán boot cho **Acer Nitro AN515-58, i5-12500H, Intel Iris Xe và RTX 3060 Laptop**.
 
-**Trạng thái ngày 31/10/2026:** bộ nền Tahoe và ứng viên **P1 CPU chuyển thể từ Yoga** đều kết thúc tại **`EXITBS:START`**. Lượt mới xác nhận Darwin **25.6.0**, CPUID patch thành công và 9 kext được chèn, gồm CpuTscSync/CpuTopologyRebuild; chưa xác minh callback của chúng chạy được. Chưa vào Recovery/desktop hoặc chứng minh tăng tốc. Xem [đối chiếu ba lượt](docs/BOOT-RESULTS-20261031.md) và [hướng tiếp theo](docs/NEXT-STEPS-20261031.md#tiếng-việt).
+**Trạng thái ngày 03/11/2026:** C1 chỉ đổi `ProvideCurrentCpuInfo=False` so với C0 stock OpenCore và đã **xác nhận XNU xuất verbose trên màn internal**. Người dùng báo màn hình đứng ở phần liệt kê ACPI trong ảnh, không đi tiếp. Chưa vào Recovery/desktop hoặc chứng minh tăng tốc. Log OpenCore vẫn kết thúc tại `EXITBS:START` dù XNU đã chạy sau đó. Xem [cách thực hiện, bằng chứng và giới hạn C1](docs/C1-RESULT-20261103.md#tiếng-việt).
 
 ## Bắt đầu ở đâu?
 
@@ -51,7 +51,7 @@ Chưa có bằng chứng desktop tăng tốc, kết quả Metal, HDMI hoạt đ�
 
 **`drive-G/` và release `drive-g-20261021` giữ nguyên snapshot ngày 21/10/2026.** Chúng chứa bộ 1401/NullMoth 2.4.3, DSDT thay thế và cấu hình CPU/GPU của thời điểm đó; không mô tả Kingston hiện tại hoặc EFI nền Tahoe mới.
 
-EFI nền cục bộ về sau không có DSDT thay thế, patch ép HT, CpuTopologyRebuild hoặc bộ tăng tốc. USB giữ Ubuntu và thêm mục GRUB gọi sang OpenCore. Cách chainload này khác boot OpenCore trực tiếp từ firmware; cần tính đến khác biệt môi trường trước boot khi phân tích lỗi EXITBS.
+EFI nền tối giản trước các ứng viên CPU P1/C0/C1 không có DSDT thay thế, patch ép HT, CpuTopologyRebuild hoặc bộ tăng tốc. USB giữ Ubuntu và thêm mục GRUB gọi sang OpenCore. Cách chainload này khác boot OpenCore trực tiếp từ firmware; cần tính đến khác biệt môi trường trước boot khi phân tích lỗi EXITBS.
 
 EFI mới, bản thu Linux thô, kext build lại và các file bộ cài Apple vẫn được giữ cục bộ. Lần cập nhật repo này chỉ công bố **tóm tắt số đo đã chọn và tài liệu**, không đăng các binary đó. Chuẩn bị cục bộ chưa tạo thành một release EFI đã boot kiểm chứng.
 

@@ -1,0 +1,40 @@
+{
+  "logs": [
+    {
+      "file": "opencore-2026-11-03-140857.txt",
+      "sha256": "45ed52390ce56736c59bb6e22365a39e28d691c7cfe4d1ad3a9db2d054a266be",
+      "booter_path": [
+        "00:000 00:000 OC: Booter path - \\EFI\\AcerBootC1/OpenCore.efi"
+      ],
+      "injection_success_count": 9,
+      "fail_lines": [],
+      "last_line": "28:539 00:002 AAPL: #[EB|LOG:EXITBS:START] 2026-11-03T14:09:26"
+    },
+    {
+      "file": "opencore-2026-11-03-141124.txt",
+      "sha256": "3b0918e9954c8d2e69e803b27719f08a149a71ce3dc3e318d9507803e58ee311",
+      "booter_path": [
+        "00:000 00:000 OC: Booter path - \\EFI\\AcerBootC1/OpenCore.efi"
+      ],
+      "injection_success_count": 9,
+      "fail_lines": [],
+      "last_line": "27:086 00:002 AAPL: #[EB|LOG:EXITBS:START] 2026-11-03T14:11:51"
+    }
+  ],
+  "C1_manifest_matches": true,
+  "C0_manifest_matches": true,
+  "C1_PCCI": false,
+  "photo_observation": "Darwin 25.6.0, VM bootstrap done, security policies and ACPI table listing; last visible table TPM2. No visible panic or Recovery UI.",
+  "photo_to_specific_log": "Not determined: two C1 logs available",
+  "conclusion": "XNU execution confirmed by supplied hardware photo; Recovery not demonstrated; exact cause of any later stop unknown",
+  "owner_followup": "Display remains at the photographed ACPI listing and does not advance; duration unspecified.",
+  "photo_sha256": "95ce51b497ac81288cac6733d94cafc051351a1edf4f10150e58f2ee62d9a001",
+  "artifact_hashes": {
+    "C0_config_sha256": "0382869306c270f5563e7dd0333042280f7eeff87c952cf0f5f6244fe20a01df",
+    "C1_config_sha256": "d2e2f32fbcd763d2c39ce10f318c80aeda49992449882d59088731dbd715c435",
+    "OpenCore_sha256": "11ba0b763d765fb82187214d1fa2ee5a9330f851461c12e34d532b7b91097875"
+  },
+  "semantic_diff": [
+    "/Kernel/Quirks/ProvideCurrentCpuInfo"
+  ]
+}
